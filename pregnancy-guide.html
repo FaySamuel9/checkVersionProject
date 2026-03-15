@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成都孕期全攻略 · 从怀孕到产后一站式指南</title>
+    <style>
+        :root {
+            --pink: #e84393;
+            --pink-dark: #c2185b;
+            --pink-light: #fce4ec;
+            --purple: #6c5ce7;
+            --purple-light: #ede7f6;
+            --blue: #0984e3;
+            --blue-light: #e3f2fd;
+            --green: #00b894;
+            --green-light: #e8f5e9;
+            --orange: #f39c12;
+            --orange-light: #fff3e0;
+            --red: #d63031;
+            --red-light: #ffebee;
+            --text: #2d3436;
+            --text2: #636e72;
+            --bg: #faf8fc;
+            --card: #ffffff;
+            --border: #f0eef5;
+            --shadow: 0 2px 16px rgba(108,92,231,0.06);
+            --shadow-lg: 0 8px 32px rgba(108,92,231,0.1);
+            --r: 16px;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+
+        /* Global site nav */
+        .site-nav {
+            background: #1a1a2e;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            position: relative;
+            z-index: 200;
+        }
+        .site-nav a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            padding: 12px 24px;
+            font-size: 0.88em;
+            font-weight: 600;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+        }
+        .site-nav a:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.08);
+        }
+        .site-nav a.current {
+            color: #fff;
+            border-bottom-color: #6c5ce7;
+            background: rgba(255,255,255,0.05);
+        }
+        @media(max-width:600px) {
+            .site-nav a { padding: 10px 14px; font-size: 0.8em; }
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #fce4ec 0%, #e8eaf6 30%, #e3f2fd 60%, #e8f5e9 100%);
+            padding: 50px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px; right: -100px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(232,67,147,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; left: 0; right: 0;
+            height: 30px;
+            background: var(--bg);
+            border-radius: 50% 50% 0 0;
+        }
+        .hero-emoji { font-size: 3em; margin-bottom: 10px; position: relative; }
+        .hero h1 {
+            font-size: 2.2em;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+        .hero .sub { color: var(--text2); margin-top: 8px; font-size: 1.05em; position: relative; }
+        .hero-tags {
+            display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+            margin-top: 16px; position: relative;
+        }
+        .hero-tag {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(8px);
+            padding: 5px 14px; border-radius: 20px;
+            font-size: 0.85em; font-weight: 600;
+            color: var(--purple);
+            border: 1px solid rgba(108,92,231,0.15);
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Nav */
+        .nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto; white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; }
+        .nav a {
+            padding: 13px 14px; font-size: 0.82em; font-weight: 600;
+            color: var(--text2); text-decoration: none;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s; white-space: nowrap; cursor: pointer;
+        }
+        .nav a:hover, .nav a.active { color: var(--pink); border-bottom-color: var(--pink); }
+
+        /* Section */
+        .sec { padding: 32px 0; }
+        .sec[id] { scroll-margin-top: 56px; }
+        .sec-head {
+            display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+        }
+        .sec-icon {
+            width: 48px; height: 48px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5em; flex-shrink: 0;
+        }
+        .sec-head h2 { font-size: 1.35em; }
+        .sec-head p { font-size: 0.88em; color: var(--text2); }
+
+        /* Card */
+        .card {
+            background: var(--card); border-radius: var(--r);
+            box-shadow: var(--shadow); padding: 22px; margin-bottom: 16px;
+        }
+        .card:hover { box-shadow: var(--shadow-lg); }
+        .card h3 { font-size: 1.05em; margin-bottom: 10px; }
+
+        /* Grid helpers */
+        .g2 { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 14px; }
+        .g3 { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 14px; }
+        .g4 { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 12px; }
+
+        /* Stat */
+        .stat {
+            background: var(--card); border-radius: 14px; padding: 18px;
+            text-align: center; box-shadow: var(--shadow);
+        }
+        .stat .sv {
+            font-size: 1.5em; font-weight: 800;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat .sl { font-size: 0.78em; color: var(--text2); margin-top: 2px; }
+
+        /* Alert */
+        .al {
+            padding: 14px 18px; border-radius: 12px; margin: 14px 0;
+            font-size: 0.88em; line-height: 1.7;
+            border-left: 4px solid;
+        }
+        .al-pink { background: var(--pink-light); color: #880e4f; border-color: var(--pink); }
+        .al-blue { background: var(--blue-light); color: #0d47a1; border-color: var(--blue); }
+        .al-green { background: var(--green-light); color: #1b5e20; border-color: var(--green); }
+        .al-orange { background: var(--orange-light); color: #e65100; border-color: var(--orange); }
+        .al-red { background: var(--red-light); color: #b71c1c; border-color: var(--red); }
+
+        /* Tag */
+        .tg {
+            display: inline-block; padding: 3px 10px; border-radius: 8px;
+            font-size: 0.78em; font-weight: 600;
+        }
+
+        /* Timeline */
+        .tl { position: relative; padding-left: 32px; }
+        .tl::before {
+            content: ''; position: absolute; left: 11px; top: 0; bottom: 0;
+            width: 3px; border-radius: 2px;
+            background: linear-gradient(to bottom, var(--pink), var(--purple), var(--blue), var(--green));
+        }
+        .tl-item {
+            position: relative; margin-bottom: 18px;
+            padding: 16px 20px; background: var(--card);
+            border-radius: 12px; box-shadow: var(--shadow);
+        }
+        .tl-item::before {
+            content: ''; position: absolute; left: -27px; top: 18px;
+            width: 13px; height: 13px; border-radius: 50%;
+            border: 3px solid white;
+        }
+        .tl-item.now::before { background: var(--red); box-shadow: 0 0 0 3px var(--red-light), 0 0 8px var(--red); }
+        .tl-item.soon::before { background: var(--orange); box-shadow: 0 0 0 3px var(--orange-light); }
+        .tl-item.future::before { background: var(--purple); box-shadow: 0 0 0 3px var(--purple-light); }
+        .tl-item.late::before { background: var(--blue); box-shadow: 0 0 0 3px var(--blue-light); }
+        .tl-item.done-phase::before { background: var(--green); box-shadow: 0 0 0 3px var(--green-light); }
+        .tl-week { font-size: 0.78em; font-weight: 700; margin-bottom: 2px; }
+        .tl-title { font-weight: 700; font-size: 0.95em; }
+        .tl-desc { font-size: 0.84em; color: var(--text2); margin-top: 4px; }
+        .tl-tag {
+            display: inline-block; padding: 2px 8px; border-radius: 6px;
+            font-size: 0.72em; font-weight: 700; margin-top: 6px;
+        }
+
+        /* Table */
+        .tb { width: 100%; border-collapse: collapse; border-radius: var(--r); overflow: hidden; }
+        .tb th {
+            padding: 11px 14px; font-size: 0.83em; text-align: left; color: white;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+        }
+        .tb td { padding: 11px 14px; font-size: 0.85em; border-bottom: 1px solid var(--border); }
+        .tb tr:last-child td { border-bottom: none; }
+        .tb tr:hover { background: #fdf2f8; }
+        .tb .hi { background: var(--pink-light); font-weight: 700; }
+
+        /* Steps */
+        .steps { display: flex; flex-direction: column; gap: 10px; }
+        .step {
+            display: flex; gap: 12px; align-items: flex-start;
+            padding: 14px 16px; border-radius: 12px;
+        }
+        .step-n {
+            width: 30px; height: 30px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.85em; font-weight: 700; color: white; flex-shrink: 0;
+        }
+        .step-body strong { font-size: 0.92em; }
+        .step-body span { font-size: 0.82em; color: var(--text2); display: block; margin-top: 2px; }
+
+        /* Accordion */
+        .acc { margin-bottom: 10px; }
+        .acc-head {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 20px; background: var(--card);
+            border-radius: var(--r); box-shadow: var(--shadow);
+            cursor: pointer; font-weight: 700; font-size: 0.95em;
+        }
+        .acc-head:hover { box-shadow: var(--shadow-lg); }
+        .acc-arrow { transition: transform 0.3s; font-size: 0.9em; color: var(--text2); }
+        .acc.open .acc-arrow { transform: rotate(180deg); }
+        .acc-body {
+            display: none; padding: 0 20px 20px;
+            background: var(--card); border-radius: 0 0 var(--r) var(--r);
+            box-shadow: var(--shadow); margin-top: -8px;
+        }
+        .acc.open .acc-body { display: block; }
+
+        /* Danger signals */
+        .danger-grid {
+            display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 10px;
+        }
+        .danger-item {
+            padding: 14px; border-radius: 12px; display: flex; gap: 10px; align-items: flex-start;
+        }
+        .danger-icon { font-size: 1.5em; flex-shrink: 0; }
+
+        /* Benefit calc */
+        .benefit-total {
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            border-radius: var(--r); padding: 30px; color: white;
+            text-align: center; margin: 20px 0;
+        }
+        .benefit-total .bt-amount { font-size: 2.5em; font-weight: 800; }
+        .benefit-total .bt-label { opacity: 0.85; margin-top: 4px; font-size: 0.9em; }
+
+        /* Final CTA */
+        .final {
+            background: linear-gradient(135deg, #fce4ec, #ede7f6, #e3f2fd);
+            border-radius: var(--r); padding: 30px; margin: 30px 0;
+            border: 2px solid rgba(108,92,231,0.15);
+        }
+        .final h3 {
+            font-size: 1.3em; margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .action-grid {
+            display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 14px;
+        }
+        .action-card {
+            background: rgba(255,255,255,0.8); backdrop-filter: blur(8px);
+            border-radius: 14px; padding: 18px;
+            border: 1px solid rgba(108,92,231,0.1);
+        }
+        .action-card h4 { font-size: 0.95em; margin-bottom: 4px; }
+        .action-card .ac-when { font-size: 0.78em; color: var(--pink); font-weight: 600; margin-bottom: 6px; }
+        .action-card p { font-size: 0.85em; color: var(--text2); line-height: 1.6; }
+
+        .footer { text-align: center; padding: 30px; color: #aaa; font-size: 0.8em; }
+
+        @media(max-width:768px) {
+            .hero h1 { font-size: 1.6em; }
+            .g2,.g3 { grid-template-columns: 1fr; }
+            .nav a { padding: 12px 10px; font-size: 0.78em; }
+        }
+        html { scroll-behavior: smooth; }
+
+        /* Progress bar */
+        .progress-bar {
+            width: 100%; height: 12px; background: #f0f0f0; border-radius: 6px;
+            overflow: hidden; margin: 10px 0;
+        }
+        .progress-fill {
+            height: 100%; border-radius: 6px;
+            background: linear-gradient(90deg, var(--pink), var(--purple), var(--blue));
+            transition: width 1s ease;
+        }
+
+        /* Week5 highlight */
+        .week5-box {
+            background: linear-gradient(135deg, #fff0f6, #f5f0ff);
+            border: 2px solid var(--pink);
+            border-radius: var(--r);
+            padding: 24px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .week5-box::before {
+            content: '当前';
+            position: absolute; top: 0; right: 0;
+            background: var(--pink); color: white;
+            padding: 4px 16px; border-radius: 0 0 0 12px;
+            font-size: 0.8em; font-weight: 700;
+        }
+        .week5-box h3 { color: var(--pink-dark); }
+
+        /* Emoji bullet */
+        .eb { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; }
+        .eb-icon { font-size: 1.3em; flex-shrink: 0; line-height: 1.4; }
+        .eb-text { font-size: 0.88em; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+<div class="site-nav">
+    <a href="index.html">🏥 医院排名</a>
+    <a href="chengdu-women-children.html">🏩 妇儿中心攻略</a>
+    <a href="pregnancy-guide.html" class="current">🤰 孕期全指南</a>
+</div>
+
+<div class="hero">
+    <div class="hero-emoji">🤰</div>
+    <h1>成都孕期全攻略</h1>
+    <div class="sub">从怀孕第5周到宝宝出生 · 政策+流程+福利一站式指南</div>
+    <div class="hero-tags">
+        <span class="hero-tag">📍 武侯区玉林</span>
+        <span class="hero-tag">🏥 妇儿中心医院</span>
+        <span class="hero-tag">🔪 计划剖宫产</span>
+        <span class="hero-tag">📅 孕5周 · 预产期2026年11月初</span>
+    </div>
+</div>
+
+<div class="nav">
+    <div class="nav-inner">
+        <a onclick="go('now')" class="active">当前状态</a>
+        <a onclick="go('timeline')">完整时间线</a>
+        <a onclick="go('register')">建卡流程</a>
+        <a onclick="go('birth-reg')">生育登记</a>
+        <a onclick="go('insurance')">生育保险</a>
+        <a onclick="go('leave')">产假政策</a>
+        <a onclick="go('benefits')">福利补贴</a>
+        <a onclick="go('prenatal')">产检指南</a>
+        <a onclick="go('danger')">危险信号</a>
+        <a onclick="go('diet')">饮食运动</a>
+        <a onclick="go('postnatal')">产后办事</a>
+        <a onclick="go('checklist')">行动清单</a>
+    </div>
+</div>
+
+<div class="container">
+
+<!-- ==================== 当前状态 ==================== -->
+<div class="sec" id="now">
+    <div class="sec-head">
+        <div class="sec-icon" style="background:var(--pink-light);">📍</div>
+        <div><h2>你现在的状态</h2><p>孕5周 · 宝宝正在形成神经管和心脏</p></div>
+    </div>
+
+    <div class="week5-box">
+        <h3>孕5周 · 宝宝像一粒苹果籽那么大</h3>
+        <div class="progress-bar" style="margin:12px 0;">
+            <div class="progress-fill" style="width:12.5%;"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:0.78em; color:var(--text2);">
+            <span>孕早期 · 第5/40周</span>
+            <span>预产期约 2026年11月初</span>
+        </div>
+
+        <div style="margin-top:16px;" class="g2">
+            <div>
+                <div style="font-weight:700; font-size:0.92em; margin-bottom:8px;">宝宝的变化</div>
+                <div class="eb"><span class="eb-icon">💗</span><span class="eb-text">心脏开始形成并可能开始跳动（约100-160次/分钟）</span></div>
+                <div class="eb"><span class="eb-icon">🧠</span><span class="eb-text">神经管正在发育，将形成大脑和脊髓</span></div>
+                <div class="eb"><span class="eb-icon">📏</span><span class="eb-text">胚胎大小约1-2mm，像苹果籽</span></div>
+                <div class="eb"><span class="eb-icon">🫧</span><span class="eb-text">胎盘和脐带开始形成</span></div>
+            </div>
+            <div>
+                <div style="font-weight:700; font-size:0.92em; margin-bottom:8px;">你可能有的感受</div>
+                <div class="eb"><span class="eb-icon">😴</span><span class="eb-text">疲倦嗜睡 — 这是孕酮升高的正常反应</span></div>
+                <div class="eb"><span class="eb-icon">🤢</span><span class="eb-text">可能出现早孕反应（恶心、食欲变化）</span></div>
+                <div class="eb"><span class="eb-icon">🍼</span><span class="eb-text">乳房胀痛、敏感</span></div>
+                <div class="eb"><span class="eb-icon">🚽</span><span class="eb-text">尿频 — 子宫增大压迫膀胱</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="al al-pink">
+        <strong>孕5周最重要的事：</strong>继续每天服用 <strong>叶酸0.4mg</strong>（预防神经管缺陷），如未开始请立即补充！整个孕早期（前12周）是神经管发育关键期。
+    </div>
+
+    <div class="g4" style="margin-top:16px;">
+        <div class="stat">
+            <div class="sv">5</div>
+            <div class="sl">当前孕周</div>
+        </div>
+        <div class="stat">
+            <div class="sv">~35</div>
+            <div class="sl">距预产期（周）</div>
+        </div>
+        <div class="stat">
+            <div class="sv">1-2mm</div>
+            <div class="sl">宝宝大小</div>
+        </div>
+        <div class="stat">
+            <div class="sv">233天</div>
+            <div class="sl">产假总天数</div>
+        </div>
+        <div class="stat">
+            <div class="sv">5.5万+</div>
+            <div class="sl">可享福利总额（元）</div>
+        </div>
+        <div class="stat">
+            <div class="sv">6,000</div>
+            <div class="sl">剖宫产报销限额（元）</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 完整时间线 ==================== -->
+<div class="sec" id="timeline">
+    <div class="sec-head">
+        <div class="sec-icon" style="background:var(--purple-light);">📅</div>
+        <div><h2>孕期完整时间线</h2><p>从现在到宝宝出生，每个阶段该做什么</p></div>
+    </div>
+
+    <div class="tl">
+        <div class="tl-item now">
+            <div class="tl-week" style="color:var(--red);">← 你在这里 · 孕5周（2026年3月中旬）</div>
+            <div class="tl-title">确认怀孕 · 开始补叶酸</div>
+            <div class="tl-desc">验孕棒确认阳性或抽血查HCG/孕酮。每天叶酸0.4mg。避免用药、远离烟酒。</div>
+            <span class="tl-tag" style="background:var(--red-light); color:var(--red);">现在就做</span>
+        </div>
+
+        <div class="tl-item now">
+            <div class="tl-week" style="color:var(--red);">孕6-7周（2026年3月下旬-4月初）</div>
+            <div class="tl-title">第一次B超 · 确认宫内妊娠+胎心</div>
+            <div class="tl-desc">到医院做早孕B超，确认孕囊在宫内、有胎心搏动。可就近在武侯区人民医院或妇儿中心实业街院区。</div>
+            <span class="tl-tag" style="background:var(--red-light); color:var(--red);">1-2周内</span>
+        </div>
+
+        <div class="tl-item soon">
+            <div class="tl-week" style="color:var(--orange);">孕7-8周（2026年4月初）</div>
+            <div class="tl-title">办理生育登记（网上）+ 社区建小卡</div>
+            <div class="tl-desc">网上办理生育登记（四川政务网/健康四川官微）。到玉林社区卫生服务中心领取《母子健康手册》。</div>
+            <span class="tl-tag" style="background:var(--orange-light); color:var(--orange);">2-3周内</span>
+        </div>
+
+        <div class="tl-item soon">
+            <div class="tl-week" style="color:var(--orange);">孕8-10周（2026年4月中旬）</div>
+            <div class="tl-title">医院建大卡 · 首次全面产检</div>
+            <div class="tl-desc">到妇儿中心医院建卡。空腹抽血：血常规、血型、肝肾功能、传染病筛查、尿常规、心电图。费用约1,000-3,100元。<strong>务必预约2周后的NT检查！</strong></div>
+            <span class="tl-tag" style="background:var(--orange-light); color:var(--orange);">3-5周内</span>
+        </div>
+
+        <div class="tl-item future">
+            <div class="tl-week" style="color:var(--purple);">孕11-13+6周（2026年5月中旬）</div>
+            <div class="tl-title">NT检查（颈项透明层）</div>
+            <div class="tl-desc">评估胎儿染色体异常风险。窗口期极短，错过不可补做！可同步做早期唐氏筛查（免费）。</div>
+            <span class="tl-tag" style="background:var(--purple-light); color:var(--purple);">窗口期短 · 必须提前预约</span>
+        </div>
+
+        <div class="tl-item future">
+            <div class="tl-week" style="color:var(--purple);">孕15-20周（2026年6-7月）</div>
+            <div class="tl-title">中期唐氏筛查 / 无创DNA</div>
+            <div class="tl-desc">血清学唐筛（免费）或自费无创DNA（约1,200-2,000元）。武侯区高风险者NIPT免费。若高风险需进一步羊水穿刺。</div>
+        </div>
+
+        <div class="tl-item future">
+            <div class="tl-week" style="color:var(--purple);">孕20-24周（2026年7-8月）</div>
+            <div class="tl-title">四维彩超 · 大排畸</div>
+            <div class="tl-desc">系统B超全面排查胎儿结构畸形，非常重要。需提前预约。</div>
+            <span class="tl-tag" style="background:var(--purple-light); color:var(--purple);">需提前1-2个月预约</span>
+        </div>
+
+        <div class="tl-item future">
+            <div class="tl-week" style="color:var(--purple);">孕24-28周（2026年8-9月）</div>
+            <div class="tl-title">OGTT糖耐量试验</div>
+            <div class="tl-desc">妊娠期糖尿病筛查。需空腹，喝75g葡萄糖水后分别查1h、2h血糖。</div>
+        </div>
+
+        <div class="tl-item late">
+            <div class="tl-week" style="color:var(--blue);">孕28-36周（2026年9-10月）</div>
+            <div class="tl-title">每2周产检 · 小排畸 · 胎心监护</div>
+            <div class="tl-desc">常规检查：宫高、腹围、血压、体重、胎心。30-32周小排畸B超。34周起开始胎心监护。</div>
+        </div>
+
+        <div class="tl-item late">
+            <div class="tl-week" style="color:var(--blue);">孕36-38周（2026年10月中下旬）</div>
+            <div class="tl-title">每周产检 · 预约VIP · 准备待产包</div>
+            <div class="tl-desc">评估分娩方式，确认剖宫产日期。到产科护士台预约VIP房间。准备待产包和证件。</div>
+            <span class="tl-tag" style="background:var(--blue-light); color:var(--blue);">VIP要抢！越早越好</span>
+        </div>
+
+        <div class="tl-item done-phase">
+            <div class="tl-week" style="color:var(--green);">孕38-39周（2026年10月底-11月初）</div>
+            <div class="tl-title">入院 · 剖宫产手术 · 宝宝出生</div>
+            <div class="tl-desc">提前1天住院，完成术前检查。手术当天宝宝出生！住院约4-5天。</div>
+            <span class="tl-tag" style="background:var(--green-light); color:var(--green);">预产期 2026年11月初</span>
+        </div>
+
+        <div class="tl-item done-phase">
+            <div class="tl-week" style="color:var(--green);">产后（2026年11月-2027年6月）</div>
+            <div class="tl-title">出生证明 · 上户口 · 新生儿医保 · 领补贴</div>
+            <div class="tl-desc">出院前办出生证明 → 30天内上户口 → 180天内办新生儿医保 → 申领育儿补贴和生育津贴。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 建卡流程 ==================== -->
+<div class="sec" id="register">
+    <div class="sec-head">
+        <div class="sec-icon" style="background:var(--orange-light);">📝</div>
+        <div><h2>建卡流程</h2><p>社区建小卡 + 医院建大卡，缺一不可</p></div>
+    </div>
+
+    <div class="g2">
+        <div class="card" style="border-top:4px solid var(--orange);">
+            <h3>第一步：社区建小卡</h3>
+            <p style="font-size:0.82em; color:var(--text2); margin-bottom:10px;">领取《母子健康手册》，登记基本信息</p>
+            <div class="eb"><span class="eb-icon">📍</span><span class="eb-text"><strong>玉林社区卫生服务中心</strong><br>地址：武侯区电信南街1号</span></div>
+            <div class="eb"><span class="eb-icon">⏰</span><span class="eb-text"><strong>时间：</strong>孕13周前完成</span></div>
+            <div class="eb"><span class="eb-icon">📄</span><span class="eb-text"><strong>材料：</strong>身份证、户口本（或居住证）、早孕确认报告</span></div>
+            <div class="eb"><span class="eb-icon">💰</span><span class="eb-text"><strong>费用：</strong>免费</span></div>
+            <div class="eb"><span class="eb-icon">🎁</span><span class="eb-text"><strong>福利：</strong>免费叶酸、登记后享免费孕检项目</span></div>
+        </div>
+
+        <div class="card" style="border-top:4px solid var(--pink);">
+            <h3>第二步：医院建大卡</h3>
+            <p style="font-size:0.82em; color:var(--text2); margin-bottom:10px;">在分娩医院建立完整产检档案</p>
+            <div class="eb"><span class="eb-icon">🏥</span><span class="eb-text"><strong>成都市妇女儿童中心医院</strong><br>微信关注"成都掌上妇幼"预约</span></div>
+            <div class="eb"><span class="eb-icon">⏰</span><span class="eb-text"><strong>建议：</strong>孕7-8周（最迟10周，否则NT来不及预约）</span></div>
+            <div class="eb"><span class="eb-icon">📄</span><span class="eb-text"><strong>材料：</strong>身份证、社保卡、母子健康手册、早孕B超报告</span></div>
+            <div class="eb"><span class="eb-icon">💰</span><span class="eb-text"><strong>费用：</strong>约1,000-3,100元（首次检查费，可刷医保）</span></div>
+            <div class="eb"><span class="eb-icon">⚠️</span><span class="eb-text"><strong>注意：</strong>必须挂上午号（空腹抽血），建卡当天同步预约NT！</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 生育登记 ==================== -->
+<div class="sec" id="birth-reg">
+    <div class="sec-head">
+        <div class="sec-icon" style="background:var(--green-light);">📋</div>
+        <div><h2>生育登记（准生证）</h2><p>2023年新规：取消数量限制，网上即可办理</p></div>
+    </div>
+
+    <div class="card">
+        <h3>四川省生育登记新政（2023年2月起）</h3>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin:10px 0;">
+            <span class="tg" style="background:var(--green-light); color:#2e7d32;">不限生育数量</span>
+            <span class="tg" style="background:var(--blue-light); color:#0d47a1;">不要求结婚登记</span>
+            <span class="tg" style="background:var(--purple-light); color:var(--purple);">网上办理</span>
+            <span class="tg" style="background:var(--orange-light); color:#e65100;">全程免费</span>
+        </div>
+
+        <div class="steps" style="margin-top:14px;">
+            <div class="step" style="background:var(--green-light);">
+                <div class="step-n" style="background:var(--green);">1</div>
+                <div class="step-body">
+                    <strong>登录平台</strong>
+                    <span>四川政务服务网 或 微信搜索"健康四川官微"小程序</span>
+                </div>
+            </div>
+            <div class="step" style="background:var(--blue-light);">
+                <div class="step-n" style="background:var(--blue);">2</div>
+                <div class="step-body">
+                    <strong>填写信息</strong>
+                    <span>夫妻双方身份信息、婚姻状况、现有子女数</span>
+                </div>
+            </div>
+            <div class="step" style="background:var(--purple-light);">
+                <div class="step-n" style="background:var(--purple);">3</div>
+                <div class="step-body">
+                    <strong>上传材料</strong>
+                    <span>身份证照片、结婚证照片（如已婚）</span>
+                </div>
+            </div>
+            <div class="step" style="background:var(--pink-light);">
+                <div class="step-n" style="background:var(--pink);">4</div>
+                <div class="step-body">
+                    <strong>审核通过</strong>
+                    <span>一般5个工作日内完成，可下载电子凭证</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="al al-blue">
+        <strong>建议：</strong>尽早办理，后续出生证明、新生儿医保时可能需要。网上5分钟搞定，免费。
+    </div>
+</div>
+
+<!-- ==================== 生育保险 ==================== -->
+<div class="sec" id="insurance">
+    <div class="sec-head">
+        <div class="sec-icon" style="background:var(--blue-light);">🏦</div>
+        <div><h2>生育保险政策</h2><p>2024年6月新政 · 报销标准大幅提高</p></div>
+    </div>
+
+    <div class="g3">
+        <div class="stat" style="border-top:3px solid var(--pink);">
+            <div class="sv">6,000元</div>
+            <div class="sl">职工剖宫产报销限额</div>
+        </div>
+        <div class="stat" style="border-top:3px solid var(--purple);">
+            <div class="sv">5,000元</div>
+            <div class="sl">职工顺产报销限额</div>
+        </div>
+        <div class="stat" style="border-top:3px solid var(--blue);">
+            <div class="sv">1,000元</div>
+            <div class="sl">产前检查定额补助</div>
+        </div>
+        <div class="stat" style="border-top:3px solid var(--green);">
+            <div class="sv">4,000元</div>
+            <div class="sl">居民剖宫产报销限额</div>
+        </div>
+        <div class="stat" style="border-top:3px solid var(--orange);">
+            <div class="sv">700元</div>
+            <div class="sl">居民产检定额补助</div>
+        </div>
+        <div class="stat" style="border-top:3px solid var(--red);">
+            <div class="sv">+1,000元</div>
+            <div class="sl">多胞胎每多一个</div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top:16px; overflow-x:auto;">
+        <h3>报销条件与详情</h3>
+        <table class="tb" style="margin-top:10px;">
+            <thead>
+                <tr><th>项目</th><th>职工医保</th><th>居民医保</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>缴费要求</strong></td><td>连续缴纳 <strong>6个月</strong></td><td>正常参保状态</td></tr>
+                <tr><td><strong>剖宫产报销</strong></td><td>限额 6,000元</td><td>限额 4,000元</td></tr>
+                <tr><td><strong>顺产报销</strong></td><td>限额 5,000元</td><td>限额 3,000元</td></tr>
+                <tr><td><strong>产前检查</strong></td><td>定额补助 1,000元</td><td>定额补助 700元</td></tr>
+                <tr class="hi"><td><strong>生育津贴</strong></td><td>单位日均工资 × <strong>113天</strong>（剖宫产）</td><td>无</td></tr>
+                <tr><td><strong>灵活就业</strong></td><td colspan="2">2025年1月起纳入！连续缴12个月可享，报销标准同职工</td></tr>
+                <tr><td><strong>男方保险</strong></td><td colspan="2">妻子无保险时可用丈夫的报销同等金额（无生育津贴）</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card" style="border:2px solid var(--purple);">
+        <h3 style="color:var(--purple);">生育津贴计算（剖宫产）</h3>
+        <div style="margin-top:10px; font-size:0.9em; line-height:2;">
+            <strong>公式：</strong>单位上年月均工资 ÷ 30 × 享受天数<br>
+            <strong>剖宫产天数：</strong>98天（基础）+ 15天（难产/剖宫产）= <strong>113天</strong><br>
+            <strong>举例：</strong>月均工资 8,000元 → 8,000 ÷ 30 × 113 ≈ <strong>30,133元</strong><br>
+            <strong>举例：</strong>月均工资 12,000元 → 12,000 ÷ 30 × 113 ≈ <strong>45,200元</strong><br>
+            <span style="font-size:0.88em; color:var(--text2);">生育津贴 > 产假工资 → 差额发给个人；< 产假工资 → 单位补足</span>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 产假政策 ==================== -->
+<div class="sec" id="leave">
+    <div class="sec-head">
+        <div class="sec-icon" style="background:var(--pink-light);">🏠</div>
+        <div><h2>产假政策</h2><p>2025年11月28日新修订 · 产假大幅延长</p></div>
+    </div>
+
+    <div class="card" style="border:2px solid var(--pink);">
+        <h3 style="color:var(--pink);">你的产假天数（一孩+剖宫产+哺乳假）</h3>
+        <div style="margin-top:12px; overflow-x:auto;">
+            <table class="tb">
+                <thead><tr><th>假期类型</th><th>天数</th><th>法律依据</th></tr></thead>
+                <tbody>
+                    <tr><td>基础产假</td><td><strong>98天</strong></td><td>《女职工劳动保护特别规定》</td></tr>
+                    <tr><td>剖宫产（难产）增加</td><td><strong>+15天</strong></td><td>《女职工劳动保护特别规定》</td></tr>
+                    <tr><td>四川延长生育假</td><td><strong>+90天</strong></td><td>《四川省人口与计划生育条例》2025年修订</td></tr>
+                    <tr><td>哺乳假（可选）</td><td><strong>+30天</strong></td><td>经本人申请单位批准</td></tr>
+                    <tr class="hi"><td><strong>合计产假</strong></td><td><strong>233天（约7.8个月）</strong></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="g2" style="margin-top:16px;">
+        <div class="card" style="border-top:3px solid var(--blue);">
+            <h3>爸爸的假期</h3>
+            <div class="eb"><span class="eb-icon">👨</span><span class="eb-text"><strong>陪产假：30天</strong>（2025年新规，原为20天）<br>子女出生后60天内一次性或分次休完</span></div>
+            <div class="eb"><span class="eb-icon">👶</span><span class="eb-text"><strong>育儿假：每年10个工作日</strong><br>子女3岁前，夫妻双方每年各享<br>当年有效，不结转下年</span></div>
+        </div>
+
+        <div class="card" style="border-top:3px solid var(--green);">
+            <h3>重要说明</h3>
+            <div class="eb"><span class="eb-icon">💰</span><span class="eb-text"><strong>工资保障：</strong>所有假期视为出勤，工资照发，不影响晋升</span></div>
+            <div class="eb"><span class="eb-icon">🏢</span><span class="eb-text"><strong>企业补助：</strong>企业落实产假的，政府给予每人2,200元社保补助</span></div>
+            <div class="eb"><span class="eb-icon">📝</span><span class="eb-text"><strong>哺乳时间：</strong>每天1小时哺乳时间，至婴儿满1周岁</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 福利补贴 ==================== -->
+<div class="sec" id="benefits">
+    <div class="sec-head">
+        <div class="sec-icon" style="background:var(--green-light);">🎁</div>
+        <div><h2>福利补贴汇总</h2><p>生育保险 + 育儿补贴 + 税收优惠，总额超5.5万</p></div>
+    </div>
+
+    <div class="card" style="overflow-x:auto;">
+        <table class="tb">
+            <thead><tr><th>福利项目</th><th>金额/标准</th><th>时长</th><th>申领方式</th></tr></thead>
+            <tbody>
+                <tr><td><strong>生育津贴</strong></td><td>日均工资×113天<br>（约2.5-4.5万）</td><td>一次性</td><td>产后通过单位申请</td></tr>
+                <tr><td><strong>剖宫产住院报销</strong></td><td>限额 6,000元</td><td>一次性</td><td>出院直接结算</td></tr>
+                <tr><td><strong>产前检查补助</strong></td><td>1,000元</td><td>一次性</td><td>产后统一申报</td></tr>
+                <tr><td><strong>育儿补贴</strong></td><td>300元/月（3,600/年）</td><td>0-3岁（3年）</td><td>"天府市民云"APP</td></tr>
+                <tr><td><strong>个税专项扣除</strong></td><td>2,000元/月（减税）</td><td>0-3岁</td><td>"个人所得税"APP</td></tr>
+                <tr><td><strong>免费孕检</strong></td><td>唐筛/NIPT(高风险)/叶酸等</td><td>孕期</td><td>社区建卡后享受</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="benefit-total">
+        <div style="font-size:0.9em; opacity:0.85; margin-bottom:6px;">三年内可享受的福利总额估算（以月均工资8,000元计算）</div>
+        <div class="bt-amount">55,000+ 元</div>
+        <div class="bt-label">生育津贴≈30,000 + 住院报销6,000 + 产检补助1,000 + 育儿补贴10,800 + 个税减免≈7,200</div>
+    </div>
+
+    <div class="g2">
+        <div class="card">
+            <h3>成都育儿补贴</h3>
+            <div class="eb"><span class="eb-icon">💰</span><span class="eb-text"><strong>标准：</strong>每孩每月300元，每年3,600元，0-3岁共10,800元</span></div>
+            <div class="eb"><span class="eb-icon">📱</span><span class="eb-text"><strong>申领：</strong>"天府市民云"APP → 生育服务 → 育儿补贴</span></div>
+            <div class="eb"><span class="eb-icon">📋</span><span class="eb-text"><strong>条件：</strong>夫妻一方为成都户籍或持成都居住证</span></div>
+        </div>
+
+        <div class="card">
+            <h3>个税专项附加扣除</h3>
+            <div class="eb"><span class="eb-icon">📊</span><span class="eb-text"><strong>标准：</strong>每子女每月2,000元定额扣除（2024年起提高）</span></div>
+            <div class="eb"><span class="eb-icon">👫</span><span class="eb-text"><strong>分配：</strong>父母各扣50%，或一方扣100%</span></div>
+            <div class="eb"><span class="eb-icon">📱</span><span class="eb-text"><strong>操作：</strong>"个人所得税"APP添加专项附加扣除</span></div>
+            <div class="eb"><span class="eb-icon">💡</span><span class="eb-text"><strong>省多少：</strong>月薪1万（税率10%）→ 每月少缴约200元</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 产检指南 ==================== -->
+<div class="sec" id="prenatal">
+    <div class="sec-head">
+        <div class="sec-icon" style="background:var(--purple-light);">🔬</div>
+        <div><h2>产检深度指南</h2><p>每项检查是什么、为什么做、费用多少</p></div>
+    </div>
+
+    <div class="acc" onclick="toggleAcc(this)">
+        <div class="acc-head">NT检查（孕11-13+6周）<span class="acc-arrow">▼</span></div>
+        <div class="acc-body">
+            <div style="padding-top:14px;">
+                <div class="eb"><span class="eb-icon">🔍</span><span class="eb-text"><strong>是什么：</strong>B超测量胎儿颈后透明带厚度，评估染色体异常风险</span></div>
+                <div class="eb"><span class="eb-icon">⏰</span><span class="eb-text"><strong>窗口期：</strong>孕11周-13周+6天，<strong>错过不可补做！</strong></span></div>
+                <div class="eb"><span class="eb-icon">💰</span><span class="eb-text"><strong>费用：</strong>约200-400元</span></div>
+                <div class="eb"><span class="eb-icon">📊</span><span class="eb-text"><strong>正常值：</strong>NT < 2.5mm低风险；≥ 2.5mm需进一步检查</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="acc" onclick="toggleAcc(this)">
+        <div class="acc-head">唐氏筛查 vs 无创DNA vs 羊水穿刺<span class="acc-arrow">▼</span></div>
+        <div class="acc-body">
+            <div style="padding-top:14px; overflow-x:auto;">
+                <table class="tb">
+                    <thead><tr><th>项目</th><th>唐氏筛查</th><th>无创DNA</th><th>羊水穿刺</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>时间</strong></td><td>15-20周</td><td>12-22周</td><td>16-22周</td></tr>
+                        <tr><td><strong>方式</strong></td><td>抽血</td><td>抽血</td><td>穿刺取羊水</td></tr>
+                        <tr><td><strong>准确率</strong></td><td>60-80%</td><td>99%+</td><td>99.9%（金标准）</td></tr>
+                        <tr><td><strong>风险</strong></td><td>无</td><td>无</td><td>~0.1-0.3%流产</td></tr>
+                        <tr><td><strong>费用</strong></td><td>免费（武侯区）</td><td>1,200-2,000元<br>（高风险免费）</td><td>2,000-4,000元<br>（指征内免费）</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="al al-green" style="margin-top:12px;">
+                <strong>武侯区福利：</strong>35岁以下唐筛免费 → 高风险者NIPT免费 → NIPT高风险者羊穿免费。逐级递进！
+            </div>
+        </div>
+    </div>
+
+    <div class="acc" onclick="toggleAcc(this)">
+        <div class="acc-head">四维彩超 / 大排畸（孕20-24周）<span class="acc-arrow">▼</span></div>
+        <div class="acc-body">
+            <div style="padding-top:14px;">
+                <div class="eb"><span class="eb-icon">🔍</span><span class="eb-text"><strong>是什么：</strong>系统B超全面排查胎儿结构畸形（心脏、大脑、四肢、面部等）</span></div>
+                <div class="eb"><span class="eb-icon">⏰</span><span class="eb-text"><strong>最佳：</strong>孕22-24周（胎儿大小适中，羊水量合适）</span></div>
+                <div class="eb"><span class="eb-icon">💰</span><span class="eb-text"><strong>费用：</strong>约400-600元</span></div>
+                <div class="eb"><span class="eb-icon">⚠️</span><span class="eb-text"><strong>注意：</strong>需提前1-2个月预约，妇儿中心非常紧张</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="acc" onclick="toggleAcc(this)">
+        <div class="acc-head">OGTT糖耐量试验（孕24-28周）<span class="acc-arrow">▼</span></div>
+        <div class="acc-body">
+            <div style="padding-top:14px;">
+                <div class="eb"><span class="eb-icon">🍬</span><span class="eb-text"><strong>是什么：</strong>筛查妊娠期糖尿病，约15-20%孕妇会中招</span></div>
+                <div class="eb"><span class="eb-icon">📋</span><span class="eb-text"><strong>流程：</strong>空腹抽血 → 5分钟内喝完75g糖水 → 1h抽血 → 2h抽血</span></div>
+                <div class="eb"><span class="eb-icon">📊</span><span class="eb-text"><strong>正常值：</strong>空腹<5.1 / 1h<10.0 / 2h<8.5 mmol/L，任一超标即确诊</span></div>
+                <div class="eb"><span class="eb-icon">💡</span><span class="eb-text"><strong>tips：</strong>前3天正常饮食（别故意控糖），检查前晚8点后禁食</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="acc" onclick="toggleAcc(this)">
+        <div class="acc-head">产检费用总估算<span class="acc-arrow">▼</span></div>
+        <div class="acc-body">
+            <div style="padding-top:14px; overflow-x:auto;">
+                <table class="tb">
+                    <thead><tr><th>阶段</th><th>项目</th><th>费用</th></tr></thead>
+                    <tbody>
+                        <tr><td>建卡首检</td><td>血常规等全套</td><td>1,000-3,100元</td></tr>
+                        <tr><td>NT（12周）</td><td>B超</td><td>200-400元</td></tr>
+                        <tr><td>唐筛（16周）</td><td>血清筛查</td><td>免费</td></tr>
+                        <tr><td>大排畸（22周）</td><td>四维彩超</td><td>400-600元</td></tr>
+                        <tr><td>OGTT（26周）</td><td>糖耐</td><td>50-100元</td></tr>
+                        <tr><td>常规产检×10-12次</td><td>各项常规</td><td>200-300/次</td></tr>
+                        <tr><td>胎心监护（34周起）</td><td>每周</td><td>50-80/次</td></tr>
+                        <tr class="hi"><td><strong>合计</strong></td><td></td><td><strong>约5,000-8,000元</strong><br>产检补助可报1,000元</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 危险信号 ==================== -->
+<div class="sec" id="danger">
+    <div class="sec-head">
+        <div class="sec-icon" style="background:var(--red-light);">🚨</div>
+        <div><h2>孕早期危险信号</h2><p>出现以下情况请立即就医！</p></div>
+    </div>
+
+    <div class="danger-grid">
+        <div class="danger-item" style="background:var(--red-light);">
+            <span class="danger-icon">🩸</span>
+            <div>
+                <strong style="color:var(--red); font-size:0.92em;">阴道出血</strong>
+                <div style="font-size:0.82em; color:var(--text2);">任何量的出血都应重视，尤其伴随腹痛。可能为先兆流产或宫外孕。</div>
+            </div>
+        </div>
+        <div class="danger-item" style="background:var(--red-light);">
+            <span class="danger-icon">😣</span>
+            <div>
+                <strong style="color:var(--red); font-size:0.92em;">剧烈腹痛</strong>
+                <div style="font-size:0.82em; color:var(--text2);">持续性下腹痛或一侧剧痛，可能为宫外孕破裂，紧急！</div>
+            </div>
+        </div>
+        <div class="danger-item" style="background:var(--orange-light);">
+            <span class="danger-icon">🤮</span>
+            <div>
+                <strong style="color:#e65100; font-size:0.92em;">严重孕吐</strong>
+                <div style="font-size:0.82em; color:var(--text2);">完全无法进食进水超24小时，尿量极少，可能脱水。</div>
+            </div>
+        </div>
+        <div class="danger-item" style="background:var(--orange-light);">
+            <span class="danger-icon">🌡️</span>
+            <div>
+                <strong style="color:#e65100; font-size:0.92em;">高烧 > 38.5°C</strong>
+                <div style="font-size:0.82em; color:var(--text2);">孕早期高烧可能影响胚胎发育，需及时就医。</div>
+            </div>
+        </div>
+        <div class="danger-item" style="background:var(--orange-light);">
+            <span class="danger-icon">😵</span>
+            <div>
+                <strong style="color:#e65100; font-size:0.92em;">头晕/晕厥</strong>
+                <div style="font-size:0.82em; color:var(--text2);">反复头晕、眼前发黑，可能为低血压、贫血或宫外孕出血。</div>
+            </div>
+        </div>
+        <div class="danger-item" style="background:var(--orange-light);">
+            <span class="danger-icon">💧</span>
+            <div>
+                <strong style="color:#e65100; font-size:0.92em;">异常分泌物</strong>
+                <div style="font-size:0.82em; color:var(--text2);">有异味、黄绿色、伴随瘙痒，可能为感染。</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="al al-red">
+        <strong>就医去哪：</strong>紧急情况直接去最近医院急诊（武侯区人民医院，距玉林1.5km）。非紧急预约妇儿中心产科。24h急诊：028-63806390
+    </div>
+</div>
+
+<!-- ==================== 饮食运动 ==================== -->
+<div class="sec" id="diet">
+    <div class="sec-head">
+        <div class="sec-icon" style="background:var(--green-light);">🥗</div>
+        <div><h2>饮食与运动建议</h2><p>孕早期（前12周）特别注意事项</p></div>
+    </div>
+
+    <div class="g2">
+        <div class="card" style="border-top:3px solid var(--green);">
+            <h3 style="color:#2e7d32;">应该做的</h3>
+            <div class="eb"><span class="eb-icon">💊</span><span class="eb-text"><strong>每天叶酸0.4mg</strong>，至少补到孕12周（建议整个孕期）</span></div>
+            <div class="eb"><span class="eb-icon">🥚</span><span class="eb-text"><strong>均衡饮食：</strong>蛋白质（鸡蛋、鱼、豆腐）、新鲜蔬果、全谷物</span></div>
+            <div class="eb"><span class="eb-icon">🥛</span><span class="eb-text"><strong>补钙：</strong>牛奶、酸奶每天300-500ml</span></div>
+            <div class="eb"><span class="eb-icon">💧</span><span class="eb-text"><strong>多喝水：</strong>每天1,500-2,000ml</span></div>
+            <div class="eb"><span class="eb-icon">🚶‍♀️</span><span class="eb-text"><strong>适量散步：</strong>每天20-30分钟轻度活动</span></div>
+            <div class="eb"><span class="eb-icon">😴</span><span class="eb-text"><strong>充足睡眠：</strong>每天8-9小时</span></div>
+            <div class="eb"><span class="eb-icon">😊</span><span class="eb-text"><strong>保持心情愉悦：</strong>孕激素会影响情绪，属正常</span></div>
+        </div>
+
+        <div class="card" style="border-top:3px solid var(--red);">
+            <h3 style="color:var(--red);">绝对避免</h3>
+            <div class="eb"><span class="eb-icon">🚫</span><span class="eb-text"><strong>药物</strong> — 未经医生允许不得服用任何药物</span></div>
+            <div class="eb"><span class="eb-icon">🍺</span><span class="eb-text"><strong>酒精</strong> — 任何量都可能致胎儿酒精综合征</span></div>
+            <div class="eb"><span class="eb-icon">🚬</span><span class="eb-text"><strong>香烟</strong> — 包括二手烟</span></div>
+            <div class="eb"><span class="eb-icon">☕</span><span class="eb-text"><strong>咖啡因</strong> — 限200mg/天内，建议尽量少喝</span></div>
+            <div class="eb"><span class="eb-icon">🐟</span><span class="eb-text"><strong>生食</strong> — 生鱼片、生肉、未消毒奶制品</span></div>
+            <div class="eb"><span class="eb-icon">🐱</span><span class="eb-text"><strong>猫砂</strong> — 弓形虫风险，让家人清理</span></div>
+            <div class="eb"><span class="eb-icon">♨️</span><span class="eb-text"><strong>高温</strong> — 避免温泉、桑拿、热水澡过久</span></div>
+            <div class="eb"><span class="eb-icon">🏋️</span><span class="eb-text"><strong>剧烈运动</strong> — 避免跑步、跳跃、重力训练</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 产后办事 ==================== -->
+<div class="sec" id="postnatal">
+    <div class="sec-head">
+        <div class="sec-icon" style="background:var(--blue-light);">📑</div>
+        <div><h2>产后办事指南</h2><p>宝宝出生后需要办理的所有手续（按时间顺序）</p></div>
+    </div>
+
+    <div class="tl">
+        <div class="tl-item done-phase">
+            <div class="tl-week" style="color:var(--green);">出院前（出生后1-3天）</div>
+            <div class="tl-title">办理出生医学证明</div>
+            <div class="tl-desc">
+                <strong>在医院直接办理</strong>（妇儿中心支持出生证+户口"两证联办"）<br>
+                材料：父母双方身份证原件、结婚证<br>
+                <span style="color:var(--red); font-weight:700;">提前想好宝宝名字！出生证签发后改名极其麻烦</span>
+            </div>
+        </div>
+
+        <div class="tl-item done-phase">
+            <div class="tl-week" style="color:var(--green);">出生后30天内</div>
+            <div class="tl-title">新生儿户口登记</div>
+            <div class="tl-desc">
+                到父/母户籍所在地派出所<br>
+                材料：出生医学证明、父母身份证、户口本、结婚证<br>
+                免费 · 当场办结
+            </div>
+        </div>
+
+        <div class="tl-item done-phase">
+            <div class="tl-week" style="color:var(--green);">出生后180天内（越早越好）</div>
+            <div class="tl-title">新生儿医保参保</div>
+            <div class="tl-desc">
+                <strong>180天内参保可追溯报销出生以来的医疗费用！</strong><br>
+                2026年标准：<strong>448元/年</strong><br>
+                到社区/街道办或"成都社保"线上办理<br>
+                材料：户口本、监护人身份证、新生儿照片<br>
+                <span style="color:var(--red); font-weight:700;">超过180天则无法追溯报销！</span>
+            </div>
+        </div>
+
+        <div class="tl-item done-phase">
+            <div class="tl-week" style="color:var(--green);">户口办好后</div>
+            <div class="tl-title">申领育儿补贴</div>
+            <div class="tl-desc">
+                "天府市民云"APP → 生育服务 → 育儿补贴<br>
+                每月300元，至宝宝满3岁
+            </div>
+        </div>
+
+        <div class="tl-item done-phase">
+            <div class="tl-week" style="color:var(--green);">产后（通过单位）</div>
+            <div class="tl-title">申领生育津贴</div>
+            <div class="tl-desc">
+                通过单位人事/社保部门申请<br>
+                材料：出院小结、出生证明、身份证、社保卡、银行卡<br>
+                一般1-3个月内到账
+            </div>
+        </div>
+
+        <div class="tl-item done-phase">
+            <div class="tl-week" style="color:var(--green);">宝宝出生后</div>
+            <div class="tl-title">填报个税专项附加扣除</div>
+            <div class="tl-desc">
+                "个人所得税"APP → 专项附加扣除 → 3岁以下婴幼儿照护<br>
+                每月2,000元定额扣除，从出生当月起
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 行动清单 ==================== -->
+<div class="sec" id="checklist">
+    <div class="sec-head">
+        <div class="sec-icon" style="background:var(--pink-light);">✅</div>
+        <div><h2>你的行动清单</h2><p>按时间排序，按部就班不遗漏</p></div>
+    </div>
+
+    <div class="final">
+        <h3>现在就要做（孕5-7周）</h3>
+        <div class="action-grid">
+            <div class="action-card">
+                <h4>💊 补叶酸</h4>
+                <div class="ac-when">今天开始</div>
+                <p>每天0.4mg叶酸，药店买或社区免费领。至少补到孕12周。</p>
+            </div>
+            <div class="action-card">
+                <h4>📋 生育登记</h4>
+                <div class="ac-when">本周完成</div>
+                <p>微信搜"健康四川官微"小程序，5分钟网上办理，免费。</p>
+            </div>
+            <div class="action-card">
+                <h4>🔍 首次B超</h4>
+                <div class="ac-when">孕6-7周（1-2周内）</div>
+                <p>确认宫内孕+胎心。可就近武侯区人民医院或妇儿中心实业街院区。</p>
+            </div>
+            <div class="action-card">
+                <h4>📱 关注公众号</h4>
+                <div class="ac-when">今天就关注</div>
+                <p>微信关注"成都掌上妇幼"，后续建卡、挂号、产检全靠它。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="final" style="background: linear-gradient(135deg, #e3f2fd, #ede7f6, #e8f5e9);">
+        <h3 style="background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">接下来要做（孕7-12周）</h3>
+        <div class="action-grid">
+            <div class="action-card">
+                <h4>🏘️ 社区建小卡</h4>
+                <div class="ac-when">孕7-8周</div>
+                <p>玉林社区卫生服务中心（电信南街1号），领《母子健康手册》+免费叶酸。</p>
+            </div>
+            <div class="action-card">
+                <h4>🏥 医院建大卡</h4>
+                <div class="ac-when">孕8-10周</div>
+                <p>妇儿中心建卡。空腹挂上午号。费用1,000-3,100元。同步预约NT！</p>
+            </div>
+            <div class="action-card">
+                <h4>🔬 NT检查</h4>
+                <div class="ac-when">孕11-13+6周</div>
+                <p>建卡时预约。窗口期极短，错过无法补做！</p>
+            </div>
+            <div class="action-card">
+                <h4>💼 通知单位</h4>
+                <div class="ac-when">确认胎心后</div>
+                <p>确认正常妊娠后告知单位，确认社保正常、了解产假流程。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="final" style="background: linear-gradient(135deg, #e8f5e9, #fff3e0, #fce4ec);">
+        <h3 style="background: linear-gradient(135deg, var(--green), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">孕中晚期 + 产后</h3>
+        <div class="action-grid">
+            <div class="action-card">
+                <h4>🧬 唐筛/NIPT</h4>
+                <div class="ac-when">孕15-20周</div>
+                <p>武侯区35岁以下唐筛免费。高风险NIPT免费。</p>
+            </div>
+            <div class="action-card">
+                <h4>📷 大排畸</h4>
+                <div class="ac-when">孕20-24周</div>
+                <p>四维彩超，提前1-2个月预约。</p>
+            </div>
+            <div class="action-card">
+                <h4>🍬 糖耐</h4>
+                <div class="ac-when">孕24-28周</div>
+                <p>空腹OGTT，筛查妊娠糖尿病。</p>
+            </div>
+            <div class="action-card">
+                <h4>👑 预约VIP</h4>
+                <div class="ac-when">孕36-38周</div>
+                <p>中心院区产科护士台预约VIP房间。越早越好！</p>
+            </div>
+            <div class="action-card">
+                <h4>🧳 待产包</h4>
+                <div class="ac-when">孕36周前</div>
+                <p>证件+产妇用品+新生儿用品。参考医院攻略页面清单。</p>
+            </div>
+            <div class="action-card">
+                <h4>📝 产后手续</h4>
+                <div class="ac-when">产后依次办理</div>
+                <p>出生证 → 户口(30天) → 医保(180天) → 育儿补贴 → 生育津贴 → 个税扣除</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="al al-orange" style="margin:20px 0;">
+    <strong>免责声明：</strong>本页面信息综合自成都市政府官网、四川省卫健委、成都本地宝、妇儿中心医院官网等公开渠道，仅供参考。政策可能随时调整，具体以最新官方发布为准。医学建议请咨询您的产检医生。
+</div>
+
+<div class="footer">
+    成都孕期全攻略 · 从怀孕到产后一站式指南<br>
+    数据来源：四川省政府 · 成都市卫健委 · 成都本地宝 · 妇儿中心医院官网<br>
+    适用时间：2025-2026年
+</div>
+
+</div>
+
+<script>
+function go(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
+function toggleAcc(el) { el.classList.toggle('open'); }
+
+// Nav highlight on scroll
+const secs = document.querySelectorAll('.sec[id]');
+const navs = document.querySelectorAll('.nav a');
+window.addEventListener('scroll', () => {
+    let cur = '';
+    secs.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+    navs.forEach(n => {
+        n.classList.remove('active');
+        if (n.getAttribute('onclick')?.includes("'" + cur + "'")) n.classList.add('active');
+    });
+});
+</script>
+
+</body>
+</html>

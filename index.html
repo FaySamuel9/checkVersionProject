@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成都公立医院剖宫产综合排名 - 玉林住户专属参考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Global site nav */
+        .site-nav {
+            background: #1a1a2e;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            position: relative;
+            z-index: 200;
+        }
+        .site-nav a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            padding: 12px 24px;
+            font-size: 0.88em;
+            font-weight: 600;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+        }
+        .site-nav a:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.08);
+        }
+        .site-nav a.current {
+            color: #fff;
+            border-bottom-color: #667eea;
+            background: rgba(255,255,255,0.05);
+        }
+        @media(max-width:600px) {
+            .site-nav a { padding: 10px 14px; font-size: 0.8em; }
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        .hero .location-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-top: 12px;
+            font-size: 0.95em;
+            position: relative;
+            backdrop-filter: blur(4px);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Dimension filter tabs */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 24px 0 16px;
+        }
+
+        .filter-btn {
+            padding: 8px 18px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Summary cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .summary-card .icon {
+            font-size: 2em;
+            margin-bottom: 8px;
+        }
+
+        .summary-card .label {
+            font-size: 0.85em;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .summary-card .value {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* Ranking section */
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin: 30px 0 16px;
+            padding-left: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .tier-label {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .tier-1 { background: #fff3e0; color: #e65100; }
+        .tier-2 { background: #e8f5e9; color: #2e7d32; }
+        .tier-3 { background: #e3f2fd; color: #1565c0; }
+
+        /* Hospital cards */
+        .hospital-card {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .hospital-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            padding: 20px 24px;
+            gap: 16px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .rank-badge {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            font-weight: 800;
+            flex-shrink: 0;
+            color: white;
+        }
+
+        .rank-1 { background: linear-gradient(135deg, #FFD700, #FFA000); }
+        .rank-2 { background: linear-gradient(135deg, #B0BEC5, #78909C); }
+        .rank-3 { background: linear-gradient(135deg, #CD7F32, #A0522D); }
+        .rank-4 { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .rank-5 { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .rank-6 { background: linear-gradient(135deg, #90CAF9, #42A5F5); }
+        .rank-7 { background: linear-gradient(135deg, #90CAF9, #42A5F5); }
+        .rank-8 { background: linear-gradient(135deg, #A5D6A7, #66BB6A); }
+        .rank-9 { background: linear-gradient(135deg, #A5D6A7, #66BB6A); }
+
+        .card-info {
+            flex: 1;
+        }
+
+        .card-info h3 {
+            font-size: 1.15em;
+            margin-bottom: 4px;
+        }
+
+        .card-info .hospital-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+
+        .tag-grade { background: #fce4ec; color: #c62828; }
+        .tag-specialty { background: #e8eaf6; color: #283593; }
+        .tag-distance { background: #e0f7fa; color: #00695c; }
+        .tag-recommend { background: #fff8e1; color: #f57f17; }
+
+        .card-score {
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .card-score .score {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #667eea;
+        }
+
+        .card-score .score-label {
+            font-size: 0.75em;
+            color: #999;
+        }
+
+        .toggle-arrow {
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            color: #ccc;
+            transition: transform 0.3s;
+        }
+
+        .hospital-card.expanded .toggle-arrow {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .card-details {
+            display: none;
+            padding: 0 24px 24px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .hospital-card.expanded .card-details {
+            display: block;
+        }
+
+        /* Radar-like score bars */
+        .score-bars {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .score-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .score-bar-label {
+            font-size: 0.85em;
+            color: #666;
+            width: 80px;
+            flex-shrink: 0;
+            text-align: right;
+        }
+
+        .score-bar-track {
+            flex: 1;
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .score-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+
+        .score-bar-value {
+            font-size: 0.85em;
+            font-weight: 700;
+            width: 30px;
+            color: #667eea;
+        }
+
+        .fill-medical { background: linear-gradient(90deg, #667eea, #764ba2); }
+        .fill-neonatal { background: linear-gradient(90deg, #42a5f5, #1976d2); }
+        .fill-distance { background: linear-gradient(90deg, #66bb6a, #388e3c); }
+        .fill-cost { background: linear-gradient(90deg, #ffa726, #f57c00); }
+        .fill-env { background: linear-gradient(90deg, #ec407a, #c2185b); }
+        .fill-reputation { background: linear-gradient(90deg, #ab47bc, #7b1fa2); }
+
+        /* Detail info grid */
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .detail-item {
+            background: #f8f9fb;
+            padding: 14px;
+            border-radius: 10px;
+        }
+
+        .detail-item .detail-label {
+            font-size: 0.8em;
+            color: #999;
+            margin-bottom: 4px;
+        }
+
+        .detail-item .detail-value {
+            font-size: 0.95em;
+            font-weight: 600;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .pros, .cons {
+            padding: 14px;
+            border-radius: 10px;
+        }
+
+        .pros {
+            background: #f1f8e9;
+        }
+
+        .cons {
+            background: #fef3f2;
+        }
+
+        .pros h4, .cons h4 {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .pros h4 { color: #33691e; }
+        .cons h4 { color: #c62828; }
+
+        .pros li, .cons li {
+            font-size: 0.85em;
+            margin-left: 16px;
+            margin-bottom: 4px;
+        }
+
+        /* Insurance info */
+        .insurance-section {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 30px 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .insurance-section h3 {
+            margin-bottom: 16px;
+            color: #667eea;
+        }
+
+        .insurance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .insurance-item {
+            background: #f8f9fb;
+            padding: 16px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .insurance-item .amount {
+            font-size: 1.4em;
+            font-weight: 800;
+            color: #667eea;
+        }
+
+        .insurance-item .desc {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        /* Recommendation box */
+        .recommendation {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            padding: 30px;
+            color: white;
+            margin: 30px 0;
+        }
+
+        .recommendation h3 {
+            font-size: 1.3em;
+            margin-bottom: 16px;
+        }
+
+        .rec-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .rec-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .rec-card h4 {
+            margin-bottom: 4px;
+        }
+
+        .rec-card .rec-label {
+            font-size: 0.8em;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .rec-card p {
+            font-size: 0.9em;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        /* Comparison table */
+        .compare-table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            min-width: 700px;
+        }
+
+        .compare-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px 16px;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .compare-table td {
+            padding: 12px 16px;
+            font-size: 0.85em;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .compare-table tr:hover {
+            background: #f8f9ff;
+        }
+
+        .compare-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .star {
+            color: #ffa000;
+        }
+
+        /* Weight explanation */
+        .weight-section {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 20px 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .weight-section h3 {
+            margin-bottom: 16px;
+        }
+
+        .weight-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .weight-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .weight-label {
+            width: 100px;
+            font-size: 0.9em;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .weight-bar {
+            flex: 1;
+            height: 24px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .weight-fill {
+            height: 100%;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            font-size: 0.8em;
+            font-weight: 700;
+            color: white;
+            transition: width 1s ease;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-size: 0.85em;
+            color: #795548;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #aaa;
+            font-size: 0.85em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.5em; }
+            .score-bars { grid-template-columns: 1fr; }
+            .detail-grid { grid-template-columns: 1fr; }
+            .pros-cons { grid-template-columns: 1fr; }
+            .card-header { padding: 16px; }
+            .card-score .score { font-size: 1.4em; }
+        }
+
+        /* Animated entrance */
+        .hospital-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .hospital-card:nth-child(1) { animation-delay: 0.1s; }
+        .hospital-card:nth-child(2) { animation-delay: 0.2s; }
+        .hospital-card:nth-child(3) { animation-delay: 0.3s; }
+        .hospital-card:nth-child(4) { animation-delay: 0.4s; }
+        .hospital-card:nth-child(5) { animation-delay: 0.5s; }
+        .hospital-card:nth-child(6) { animation-delay: 0.6s; }
+        .hospital-card:nth-child(7) { animation-delay: 0.7s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="site-nav">
+    <a href="index.html" class="current">🏥 医院排名</a>
+    <a href="chengdu-women-children.html">🏩 妇儿中心攻略</a>
+    <a href="pregnancy-guide.html">🤰 孕期全指南</a>
+</div>
+
+<div class="hero">
+    <h1>成都公立医院剖宫产综合排名</h1>
+    <div class="subtitle">基于产科实力 · 新生儿科 · 距离 · 费用 · 环境 · 口碑 六维度评估</div>
+    <div class="location-tag">📍 家庭地址：成都市武侯区 · 玉林片区</div>
+</div>
+
+<div class="container">
+
+    <!-- Quick Summary -->
+    <div class="summary-grid">
+        <div class="summary-card">
+            <div class="icon">🏥</div>
+            <div class="label">参评公立医院</div>
+            <div class="value">7 家</div>
+        </div>
+        <div class="summary-card">
+            <div class="icon">⭐</div>
+            <div class="label">三甲医院</div>
+            <div class="value">5 家</div>
+        </div>
+        <div class="summary-card">
+            <div class="icon">💰</div>
+            <div class="label">剖宫产费用区间</div>
+            <div class="value">5,000 - 12,000元</div>
+        </div>
+        <div class="summary-card">
+            <div class="icon">📋</div>
+            <div class="label">医保报销限额</div>
+            <div class="value">6,000元</div>
+        </div>
+    </div>
+
+    <!-- Scoring weights -->
+    <div class="weight-section">
+        <h3>📊 评分权重说明</h3>
+        <p style="font-size:0.9em; color:#888; margin-bottom:14px;">综合评分 = 各维度得分 × 权重，满分100分。权重根据剖宫产手术安全性优先原则设定：</p>
+        <div class="weight-bars">
+            <div class="weight-item">
+                <span class="weight-label">产科实力</span>
+                <div class="weight-bar"><div class="weight-fill fill-medical" style="width:30%">30%</div></div>
+            </div>
+            <div class="weight-item">
+                <span class="weight-label">新生儿科</span>
+                <div class="weight-bar"><div class="weight-fill fill-neonatal" style="width:20%">20%</div></div>
+            </div>
+            <div class="weight-item">
+                <span class="weight-label">距离便利</span>
+                <div class="weight-bar"><div class="weight-fill fill-distance" style="width:20%">20%</div></div>
+            </div>
+            <div class="weight-item">
+                <span class="weight-label">费用合理</span>
+                <div class="weight-bar"><div class="weight-fill fill-cost" style="width:10%">10%</div></div>
+            </div>
+            <div class="weight-item">
+                <span class="weight-label">住院环境</span>
+                <div class="weight-bar"><div class="weight-fill fill-env" style="width:10%">10%</div></div>
+            </div>
+            <div class="weight-item">
+                <span class="weight-label">口碑声誉</span>
+                <div class="weight-bar"><div class="weight-fill fill-reputation" style="width:10%">10%</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison table -->
+    <h2 class="section-title">横向对比总览</h2>
+    <div class="compare-table-wrapper">
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th>排名</th>
+                    <th>医院名称</th>
+                    <th>等级</th>
+                    <th>产科评分</th>
+                    <th>新生儿科</th>
+                    <th>距玉林</th>
+                    <th>费用参考</th>
+                    <th>综合分</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🥇 1</td>
+                    <td style="text-align:left;font-weight:700;">华西附二院（华西院区）</td>
+                    <td><span class="star">★★★</span> 三甲</td>
+                    <td>9.8</td>
+                    <td>9.8</td>
+                    <td>~3km</td>
+                    <td>7,000-10,000</td>
+                    <td style="font-weight:800;color:#667eea;">93.6</td>
+                </tr>
+                <tr>
+                    <td>🥈 2</td>
+                    <td style="text-align:left;font-weight:700;">成都市妇女儿童中心医院</td>
+                    <td><span class="star">★★★</span> 三甲</td>
+                    <td>9.2</td>
+                    <td>8.8</td>
+                    <td>~6km</td>
+                    <td>6,000-10,000</td>
+                    <td style="font-weight:800;color:#667eea;">87.0</td>
+                </tr>
+                <tr>
+                    <td>🥉 3</td>
+                    <td style="text-align:left;font-weight:700;">四川省人民医院</td>
+                    <td><span class="star">★★★</span> 三甲</td>
+                    <td>8.8</td>
+                    <td>9.0</td>
+                    <td>~6km</td>
+                    <td>6,000-9,000</td>
+                    <td style="font-weight:800;color:#667eea;">85.4</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td style="text-align:left;font-weight:700;">四川省妇幼保健院</td>
+                    <td><span class="star">★★★</span> 三甲</td>
+                    <td>8.2</td>
+                    <td>8.0</td>
+                    <td>~5km</td>
+                    <td>6,700-11,000</td>
+                    <td style="font-weight:800;color:#667eea;">81.6</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td style="text-align:left;font-weight:700;">成都市第三人民医院</td>
+                    <td><span class="star">★★★</span> 三甲</td>
+                    <td>7.5</td>
+                    <td>7.5</td>
+                    <td>~8km</td>
+                    <td>6,000-9,000</td>
+                    <td style="font-weight:800;color:#667eea;">72.4</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td style="text-align:left;font-weight:700;">武侯区人民医院</td>
+                    <td><span class="star">★★</span> 二甲</td>
+                    <td>7.0</td>
+                    <td>6.5</td>
+                    <td>~1.5km</td>
+                    <td>5,000-8,000</td>
+                    <td style="font-weight:800;color:#667eea;">72.0</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td style="text-align:left;font-weight:700;">锦江区妇幼保健院</td>
+                    <td><span class="star">★★</span> 二甲</td>
+                    <td>7.0</td>
+                    <td>6.5</td>
+                    <td>~6km</td>
+                    <td>5,000-8,000</td>
+                    <td style="font-weight:800;color:#667eea;">67.2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Tier 1 -->
+    <h2 class="section-title">详细排名与分析</h2>
+    <span class="tier-label tier-1">🏆 第一梯队 · 顶级推荐</span>
+
+    <!-- Hospital 1: 华西附二院 -->
+    <div class="hospital-card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <div class="rank-badge rank-1">1</div>
+            <div class="card-info">
+                <h3>四川大学华西第二医院（华西附二院）</h3>
+                <div class="hospital-tags">
+                    <span class="tag tag-grade">三级甲等</span>
+                    <span class="tag tag-specialty">妇产专科</span>
+                    <span class="tag tag-distance">距玉林 ~3km</span>
+                    <span class="tag tag-recommend">首选推荐</span>
+                </div>
+            </div>
+            <div class="card-score">
+                <div class="score">93.6</div>
+                <div class="score-label">综合评分</div>
+            </div>
+            <span class="toggle-arrow">▼</span>
+        </div>
+        <div class="card-details">
+            <div class="score-bars">
+                <div class="score-bar-item">
+                    <span class="score-bar-label">产科实力</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-medical" style="width:98%"></div></div>
+                    <span class="score-bar-value">9.8</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">新生儿科</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-neonatal" style="width:98%"></div></div>
+                    <span class="score-bar-value">9.8</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">距离便利</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-distance" style="width:92%"></div></div>
+                    <span class="score-bar-value">9.2</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">费用合理</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-cost" style="width:75%"></div></div>
+                    <span class="score-bar-value">7.5</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">住院环境</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-env" style="width:72%"></div></div>
+                    <span class="score-bar-value">7.2</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">口碑声誉</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-reputation" style="width:98%"></div></div>
+                    <span class="score-bar-value">9.8</span>
+                </div>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <div class="detail-label">地址</div>
+                    <div class="detail-value">华西院区：人民南路三段20号<br>锦江院区：成龙路1416号</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">费用参考</div>
+                    <div class="detail-value">普通剖宫产 7,000-10,000元<br>六人间55元/天 · 双人间230元/天 · 单人间360元/天</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">核心优势</div>
+                    <div class="detail-value">全国妇产科排名第7，产科学、儿科学均为国家重点学科，NICU全川顶尖</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">建卡提醒</div>
+                    <div class="detail-value" style="color:#c62828;">需尽早建卡！建议确认怀孕后立即预约，最迟孕12周前完成建卡</div>
+                </div>
+            </div>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ 优势</h4>
+                    <ul>
+                        <li>产科技术实力全川最强</li>
+                        <li>新生儿ICU全川顶尖，并发症保障最强</li>
+                        <li>华西院区距玉林仅3-4公里</li>
+                        <li>高危/高龄产妇首选</li>
+                        <li>全国唯一妇儿专科进入百强的医院</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>⚠️ 不足</h4>
+                    <ul>
+                        <li>人多床位极其紧张</li>
+                        <li>建卡名额紧张，需提前抢号</li>
+                        <li>VIP家化病房极少（全院仅2间）</li>
+                        <li>服务态度一般（因人流量大）</li>
+                        <li>周转快：剖腹产4-5天即出院</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hospital 2: 妇女儿童中心医院 -->
+    <div class="hospital-card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <div class="rank-badge rank-2">2</div>
+            <div class="card-info">
+                <h3>成都市妇女儿童中心医院</h3>
+                <div class="hospital-tags">
+                    <span class="tag tag-grade">三级甲等</span>
+                    <span class="tag tag-specialty">妇儿专科</span>
+                    <span class="tag tag-distance">距玉林 ~6km</span>
+                </div>
+            </div>
+            <div class="card-score">
+                <div class="score">87.0</div>
+                <div class="score-label">综合评分</div>
+            </div>
+            <span class="toggle-arrow">▼</span>
+        </div>
+        <div class="card-details">
+            <div class="score-bars">
+                <div class="score-bar-item">
+                    <span class="score-bar-label">产科实力</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-medical" style="width:92%"></div></div>
+                    <span class="score-bar-value">9.2</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">新生儿科</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-neonatal" style="width:88%"></div></div>
+                    <span class="score-bar-value">8.8</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">距离便利</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-distance" style="width:78%"></div></div>
+                    <span class="score-bar-value">7.8</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">费用合理</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-cost" style="width:76%"></div></div>
+                    <span class="score-bar-value">7.6</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">住院环境</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-env" style="width:88%"></div></div>
+                    <span class="score-bar-value">8.8</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">口碑声誉</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-reputation" style="width:90%"></div></div>
+                    <span class="score-bar-value">9.0</span>
+                </div>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <div class="detail-label">地址</div>
+                    <div class="detail-value">中心院区：日月大道1617号<br>实业街院区：实业街32号</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">费用参考</div>
+                    <div class="detail-value">普通剖宫产 6,000-10,000元<br>单间300元/天 · VIP套间 980-1,280元/天<br>特需VIP套餐 20,000-40,000元</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">核心数据</div>
+                    <div class="detail-value">2024年分娩量16,996人次，占全市分娩量10%，西南地区规模最大产科之一</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">病房特色</div>
+                    <div class="detail-value">VIP病房选择丰富，环境较好，实业街院区单间900-1,200元/天</div>
+                </div>
+            </div>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ 优势</h4>
+                    <ul>
+                        <li>分娩量全市最大，经验极其丰富</li>
+                        <li>VIP病房选择多，环境好</li>
+                        <li>妇儿专科医院，产科氛围好</li>
+                        <li>建卡相对华西更容易</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>⚠️ 不足</h4>
+                    <ul>
+                        <li>人非常多，排队时间长</li>
+                        <li>中心院区距玉林稍远（~10km）</li>
+                        <li>VIP病房费用较高</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hospital 3: 省医院 -->
+    <div class="hospital-card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <div class="rank-badge rank-3">3</div>
+            <div class="card-info">
+                <h3>四川省人民医院</h3>
+                <div class="hospital-tags">
+                    <span class="tag tag-grade">三级甲等</span>
+                    <span class="tag tag-specialty">综合医院</span>
+                    <span class="tag tag-distance">距玉林 ~6km</span>
+                </div>
+            </div>
+            <div class="card-score">
+                <div class="score">85.4</div>
+                <div class="score-label">综合评分</div>
+            </div>
+            <span class="toggle-arrow">▼</span>
+        </div>
+        <div class="card-details">
+            <div class="score-bars">
+                <div class="score-bar-item">
+                    <span class="score-bar-label">产科实力</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-medical" style="width:88%"></div></div>
+                    <span class="score-bar-value">8.8</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">新生儿科</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-neonatal" style="width:90%"></div></div>
+                    <span class="score-bar-value">9.0</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">距离便利</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-distance" style="width:78%"></div></div>
+                    <span class="score-bar-value">7.8</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">费用合理</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-cost" style="width:82%"></div></div>
+                    <span class="score-bar-value">8.2</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">住院环境</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-env" style="width:78%"></div></div>
+                    <span class="score-bar-value">7.8</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">口碑声誉</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-reputation" style="width:88%"></div></div>
+                    <span class="score-bar-value">8.8</span>
+                </div>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <div class="detail-label">地址</div>
+                    <div class="detail-value">一环路西二段32号</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">费用参考</div>
+                    <div class="detail-value">普通剖宫产 6,000-9,000元</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">科室规模</div>
+                    <div class="detail-value">医生65人（主任医师6人、副主任医师17人、博士17人），全科医护195人</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">特色</div>
+                    <div class="detail-value">四川省危重孕产妇救治中心，科技影响力排名全省第二</div>
+                </div>
+            </div>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ 优势</h4>
+                    <ul>
+                        <li>综合实力极强，多学科会诊能力突出</li>
+                        <li>危重孕产妇救治中心</li>
+                        <li>有合并症的孕妇特别适合</li>
+                        <li>费用相对合理</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>⚠️ 不足</h4>
+                    <ul>
+                        <li>非妇产专科医院，产科氛围不如妇儿专科</li>
+                        <li>产科不是其最强科室</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tier 2 -->
+    <span class="tier-label tier-2">🌟 第二梯队 · 优质选择</span>
+
+    <!-- Hospital 4: 省妇幼 -->
+    <div class="hospital-card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <div class="rank-badge rank-4">4</div>
+            <div class="card-info">
+                <h3>四川省妇幼保健院</h3>
+                <div class="hospital-tags">
+                    <span class="tag tag-grade">三级甲等</span>
+                    <span class="tag tag-specialty">妇幼保健</span>
+                    <span class="tag tag-distance">距玉林 ~5km</span>
+                    <span class="tag tag-recommend">性价比推荐</span>
+                </div>
+            </div>
+            <div class="card-score">
+                <div class="score">81.6</div>
+                <div class="score-label">综合评分</div>
+            </div>
+            <span class="toggle-arrow">▼</span>
+        </div>
+        <div class="card-details">
+            <div class="score-bars">
+                <div class="score-bar-item">
+                    <span class="score-bar-label">产科实力</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-medical" style="width:82%"></div></div>
+                    <span class="score-bar-value">8.2</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">新生儿科</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-neonatal" style="width:80%"></div></div>
+                    <span class="score-bar-value">8.0</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">距离便利</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-distance" style="width:84%"></div></div>
+                    <span class="score-bar-value">8.4</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">费用合理</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-cost" style="width:78%"></div></div>
+                    <span class="score-bar-value">7.8</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">住院环境</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-env" style="width:80%"></div></div>
+                    <span class="score-bar-value">8.0</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">口碑声誉</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-reputation" style="width:80%"></div></div>
+                    <span class="score-bar-value">8.0</span>
+                </div>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <div class="detail-label">地址</div>
+                    <div class="detail-value">金阳院区：晋阳路</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">费用参考</div>
+                    <div class="detail-value">剖宫产 6,700-11,000元</div>
+                </div>
+            </div>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ 优势</h4>
+                    <ul>
+                        <li>省级妇幼专科，专家团队完善</li>
+                        <li>距玉林较近（同在武侯区方向）</li>
+                        <li>三甲妇幼，费用相对合理</li>
+                        <li>建卡/就诊不如华西紧张</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>⚠️ 不足</h4>
+                    <ul>
+                        <li>综合实力不如前三家</li>
+                        <li>处理极端危重情况能力有限</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hospital 5: 三医院 -->
+    <div class="hospital-card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <div class="rank-badge rank-5">5</div>
+            <div class="card-info">
+                <h3>成都市第三人民医院</h3>
+                <div class="hospital-tags">
+                    <span class="tag tag-grade">三级甲等</span>
+                    <span class="tag tag-specialty">综合医院</span>
+                    <span class="tag tag-distance">距玉林 ~8km</span>
+                </div>
+            </div>
+            <div class="card-score">
+                <div class="score">72.4</div>
+                <div class="score-label">综合评分</div>
+            </div>
+            <span class="toggle-arrow">▼</span>
+        </div>
+        <div class="card-details">
+            <div class="score-bars">
+                <div class="score-bar-item">
+                    <span class="score-bar-label">产科实力</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-medical" style="width:75%"></div></div>
+                    <span class="score-bar-value">7.5</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">新生儿科</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-neonatal" style="width:75%"></div></div>
+                    <span class="score-bar-value">7.5</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">距离便利</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-distance" style="width:62%"></div></div>
+                    <span class="score-bar-value">6.2</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">费用合理</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-cost" style="width:82%"></div></div>
+                    <span class="score-bar-value">8.2</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">住院环境</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-env" style="width:72%"></div></div>
+                    <span class="score-bar-value">7.2</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">口碑声誉</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-reputation" style="width:72%"></div></div>
+                    <span class="score-bar-value">7.2</span>
+                </div>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <div class="detail-label">地址</div>
+                    <div class="detail-value">青龙街82号</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">费用参考</div>
+                    <div class="detail-value">普通剖宫产 6,000-9,000元<br>产科床位58张，高级职称医师10人</div>
+                </div>
+            </div>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ 优势</h4>
+                    <ul>
+                        <li>三甲综合医院，产科有一定实力</li>
+                        <li>成都市产科急救网络单位</li>
+                        <li>费用合理</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>⚠️ 不足</h4>
+                    <ul>
+                        <li>产科非其最强科室</li>
+                        <li>距玉林较远（~8km）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tier 3 -->
+    <span class="tier-label tier-3">📍 第三梯队 · 就近便利</span>
+
+    <!-- Hospital 6: 武侯区人民医院 -->
+    <div class="hospital-card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <div class="rank-badge rank-6">6</div>
+            <div class="card-info">
+                <h3>武侯区人民医院</h3>
+                <div class="hospital-tags">
+                    <span class="tag tag-grade">二级甲等</span>
+                    <span class="tag tag-specialty">综合医院</span>
+                    <span class="tag tag-distance">距玉林 ~1.5km</span>
+                    <span class="tag tag-recommend">距离最近</span>
+                </div>
+            </div>
+            <div class="card-score">
+                <div class="score">72.0</div>
+                <div class="score-label">综合评分</div>
+            </div>
+            <span class="toggle-arrow">▼</span>
+        </div>
+        <div class="card-details">
+            <div class="score-bars">
+                <div class="score-bar-item">
+                    <span class="score-bar-label">产科实力</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-medical" style="width:70%"></div></div>
+                    <span class="score-bar-value">7.0</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">新生儿科</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-neonatal" style="width:65%"></div></div>
+                    <span class="score-bar-value">6.5</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">距离便利</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-distance" style="width:96%"></div></div>
+                    <span class="score-bar-value">9.6</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">费用合理</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-cost" style="width:90%"></div></div>
+                    <span class="score-bar-value">9.0</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">住院环境</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-env" style="width:72%"></div></div>
+                    <span class="score-bar-value">7.2</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">口碑声誉</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-reputation" style="width:68%"></div></div>
+                    <span class="score-bar-value">6.8</span>
+                </div>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <div class="detail-label">地址</div>
+                    <div class="detail-value">广福桥横街1号</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">费用参考</div>
+                    <div class="detail-value">剖宫产 5,000-8,000元<br>年分娩量约5,000例，年手术量近3,000台</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">科室规模</div>
+                    <div class="detail-value">医护100人（高级职称12人、中级33人），武侯区产科急救中心</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">特色资质</div>
+                    <div class="detail-value">武侯区/高新区产前筛查中心</div>
+                </div>
+            </div>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ 优势</h4>
+                    <ul>
+                        <li>距玉林最近（步行可达）</li>
+                        <li>费用最低，性价比高</li>
+                        <li>床位不紧张，产检方便</li>
+                        <li>武侯区产科急救中心</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>⚠️ 不足</h4>
+                    <ul>
+                        <li>二甲等级，严重并发症处理能力有限</li>
+                        <li>建议作为产检医院，剖宫产优先选三甲</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hospital 7: 锦江妇幼 -->
+    <div class="hospital-card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <div class="rank-badge rank-7">7</div>
+            <div class="card-info">
+                <h3>锦江区妇幼保健院</h3>
+                <div class="hospital-tags">
+                    <span class="tag tag-grade">二级甲等</span>
+                    <span class="tag tag-specialty">妇幼保健</span>
+                    <span class="tag tag-distance">距玉林 ~6km</span>
+                </div>
+            </div>
+            <div class="card-score">
+                <div class="score">67.2</div>
+                <div class="score-label">综合评分</div>
+            </div>
+            <span class="toggle-arrow">▼</span>
+        </div>
+        <div class="card-details">
+            <div class="score-bars">
+                <div class="score-bar-item">
+                    <span class="score-bar-label">产科实力</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-medical" style="width:70%"></div></div>
+                    <span class="score-bar-value">7.0</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">新生儿科</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-neonatal" style="width:65%"></div></div>
+                    <span class="score-bar-value">6.5</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">距离便利</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-distance" style="width:76%"></div></div>
+                    <span class="score-bar-value">7.6</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">费用合理</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-cost" style="width:88%"></div></div>
+                    <span class="score-bar-value">8.8</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">住院环境</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-env" style="width:78%"></div></div>
+                    <span class="score-bar-value">7.8</span>
+                </div>
+                <div class="score-bar-item">
+                    <span class="score-bar-label">口碑声誉</span>
+                    <div class="score-bar-track"><div class="score-bar-fill fill-reputation" style="width:70%"></div></div>
+                    <span class="score-bar-value">7.0</span>
+                </div>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <div class="detail-label">费用参考</div>
+                    <div class="detail-value">剖宫产 5,000-8,000元</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">特色</div>
+                    <div class="detail-value">区级妇幼保健院，口碑不错，有VIP产房</div>
+                </div>
+            </div>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ 优势</h4>
+                    <ul>
+                        <li>妇幼专科，服务较好</li>
+                        <li>人少不拥挤</li>
+                        <li>费用低</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>⚠️ 不足</h4>
+                    <ul>
+                        <li>二甲等级，处理复杂情况能力有限</li>
+                        <li>距离无优势</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Insurance section -->
+    <div class="insurance-section">
+        <h3>💰 生育保险报销参考（2024年6月起执行）</h3>
+        <div class="insurance-grid">
+            <div class="insurance-item">
+                <div class="amount">6,000元</div>
+                <div class="desc">剖宫产报销限额</div>
+            </div>
+            <div class="insurance-item">
+                <div class="amount">5,000元</div>
+                <div class="desc">顺产报销限额</div>
+            </div>
+            <div class="insurance-item">
+                <div class="amount">1,000元</div>
+                <div class="desc">产前检查定额补助</div>
+            </div>
+            <div class="insurance-item">
+                <div class="amount">+1,000元</div>
+                <div class="desc">多胞胎每多一个</div>
+            </div>
+        </div>
+        <p style="margin-top:14px; font-size:0.85em; color:#888;">
+            * 需连续缴纳生育保险满12个月。剖宫产总费用约7,000-12,000元（普通病房），报销6,000元后自费约 <strong>1,000-6,000元</strong>（不含VIP病房差价）
+        </p>
+    </div>
+
+    <!-- Final Recommendation -->
+    <div class="recommendation">
+        <h3>📌 针对玉林住户的最终建议</h3>
+        <div class="rec-cards">
+            <div class="rec-card">
+                <h4>🥇 首选：华西附二院</h4>
+                <div class="rec-label">技术最强 + 距离近</div>
+                <p>华西院区距玉林仅3km，产科和新生儿科全川最强。<strong>需尽早建卡（孕12周前）</strong>，建议确认怀孕后立即行动。</p>
+            </div>
+            <div class="rec-card">
+                <h4>🥈 次选：妇儿中心医院</h4>
+                <div class="rec-label">经验丰富 + 环境好</div>
+                <p>分娩量全市最大，VIP病房选择多。实业街院区距玉林约6km，建卡比华西容易。</p>
+            </div>
+            <div class="rec-card">
+                <h4>💡 性价比：省妇幼保健院</h4>
+                <div class="rec-label">距离近 + 费用合理</div>
+                <p>三甲妇幼专科，同在武侯区方向约5km，建卡不紧张，适合正常低风险产妇。</p>
+            </div>
+            <div class="rec-card">
+                <h4>📍 产检推荐：武侯区人民医院</h4>
+                <div class="rec-label">最近 + 日常产检</div>
+                <p>距玉林仅1.5km，建议日常产检在此进行。但剖宫产手术建议选择上述三甲医院。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <strong>⚠️ 免责声明：</strong>本页面数据来源于公开信息整理，仅供参考。实际费用、床位、医生排班等信息可能随时变化，请以各医院官方发布为准。就医选择请结合自身身体状况，咨询专业医生意见。数据更新时间：2025年。
+    </div>
+
+    <div class="footer">
+        成都公立医院剖宫产综合排名 · 玉林住户专属参考<br>
+        数据综合自各医院官网、好大夫在线、成都本地宝等公开信息
+    </div>
+
+</div>
+
+<script>
+function toggleCard(card) {
+    card.classList.toggle('expanded');
+}
+
+// Auto expand first card
+document.addEventListener('DOMContentLoaded', function() {
+    const firstCard = document.querySelector('.hospital-card');
+    if (firstCard) firstCard.classList.add('expanded');
+});
+</script>
+
+</body>
+</html>

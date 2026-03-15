@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成都市妇女儿童中心医院 · 剖宫产深度攻略</title>
+    <style>
+        :root {
+            --primary: #e84393;
+            --primary-dark: #c2185b;
+            --primary-light: #fce4ec;
+            --accent: #6c5ce7;
+            --accent-light: #ede7f6;
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --danger: #d63031;
+            --text: #2d3436;
+            --text-light: #636e72;
+            --bg: #fafafa;
+            --card: #ffffff;
+            --border: #f0f0f0;
+            --shadow: 0 2px 16px rgba(0,0,0,0.06);
+            --shadow-hover: 0 8px 30px rgba(0,0,0,0.1);
+            --radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* Global site nav */
+        .site-nav {
+            background: #1a1a2e;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            position: relative;
+            z-index: 200;
+        }
+        .site-nav a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            padding: 12px 24px;
+            font-size: 0.88em;
+            font-weight: 600;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+        }
+        .site-nav a:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.08);
+        }
+        .site-nav a.current {
+            color: #fff;
+            border-bottom-color: #e84393;
+            background: rgba(255,255,255,0.05);
+        }
+        @media(max-width:600px) {
+            .site-nav a { padding: 10px 14px; font-size: 0.8em; }
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #e84393 0%, #6c5ce7 50%, #0984e3 100%);
+            color: white;
+            padding: 50px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: var(--bg);
+            border-radius: 50% 50% 0 0;
+        }
+        .hero h1 { font-size: 2em; margin-bottom: 8px; position: relative; }
+        .hero .sub { opacity: 0.9; font-size: 1.05em; position: relative; }
+        .hero-badges {
+            display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+            margin-top: 16px; position: relative;
+        }
+        .hero-badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(6px);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Nav tabs */
+        .nav-tabs {
+            position: sticky; top: 0; z-index: 100;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 0 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .nav-tabs-inner {
+            max-width: 1100px; margin: 0 auto;
+            display: flex; gap: 0;
+        }
+        .nav-tab {
+            padding: 14px 16px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .nav-tab:hover, .nav-tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        /* Section */
+        .section {
+            padding: 30px 0;
+        }
+        .section-header {
+            display: flex; align-items: center; gap: 12px;
+            margin-bottom: 20px;
+        }
+        .section-icon {
+            width: 44px; height: 44px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4em;
+            flex-shrink: 0;
+        }
+        .section-header h2 { font-size: 1.4em; }
+        .section-header p { font-size: 0.9em; color: var(--text-light); }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover { box-shadow: var(--shadow-hover); }
+        .card h3 { font-size: 1.1em; margin-bottom: 12px; color: var(--text); }
+
+        /* Stats grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 18px 14px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .stat-card .stat-value {
+            font-size: 1.5em;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-card .stat-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* Campus compare */
+        .campus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+        .campus-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        .campus-header {
+            padding: 18px 20px;
+            color: white;
+            font-weight: 700;
+        }
+        .campus-header.recommended { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+        .campus-header.alternative { background: linear-gradient(135deg, #636e72, #2d3436); }
+        .campus-header.children { background: linear-gradient(135deg, #00b894, #00cec9); }
+        .campus-header small { font-weight: 400; opacity: 0.85; display: block; margin-top: 2px; }
+        .campus-body { padding: 18px 20px; }
+        .campus-body .info-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9em;
+        }
+        .campus-body .info-row:last-child { border-bottom: none; }
+        .info-label { color: var(--text-light); }
+        .info-value { font-weight: 600; text-align: right; }
+        .badge-rec {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+
+        /* Doctor cards */
+        .doctor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 14px;
+        }
+        .doctor-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 20px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .doctor-avatar {
+            width: 52px; height: 52px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4em;
+            flex-shrink: 0;
+            color: white;
+        }
+        .doctor-info h4 { font-size: 1em; margin-bottom: 2px; }
+        .doctor-info .doctor-title { font-size: 0.8em; color: var(--primary); font-weight: 600; }
+        .doctor-info .doctor-spec { font-size: 0.82em; color: var(--text-light); margin-top: 6px; }
+        .doctor-tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 1px 8px;
+            border-radius: 8px;
+            font-size: 0.72em;
+            font-weight: 600;
+            margin-top: 6px;
+            margin-right: 4px;
+        }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            background: var(--card);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px; top: 20px;
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        .timeline-week {
+            font-size: 0.8em;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .timeline-title { font-weight: 700; font-size: 0.95em; margin-bottom: 4px; }
+        .timeline-desc { font-size: 0.85em; color: var(--text-light); }
+        .timeline-item.highlight { border-left: 3px solid var(--primary); }
+
+        /* Fee table */
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .fee-table th {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 12px 16px;
+            font-size: 0.85em;
+            text-align: left;
+        }
+        .fee-table td {
+            padding: 12px 16px;
+            font-size: 0.88em;
+            border-bottom: 1px solid var(--border);
+        }
+        .fee-table tr:last-child td { border-bottom: none; }
+        .fee-table tr:hover { background: #fef0f5; }
+        .fee-table .total-row { background: var(--primary-light); font-weight: 700; }
+        .fee-table .total-row td { color: var(--primary-dark); }
+
+        /* Room cards */
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 14px;
+        }
+        .room-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            text-align: center;
+        }
+        .room-card .room-header {
+            padding: 16px;
+            font-weight: 700;
+            font-size: 1em;
+            color: white;
+        }
+        .room-card .room-price {
+            padding: 14px;
+            font-size: 1.6em;
+            font-weight: 800;
+        }
+        .room-card .room-unit { font-size: 0.5em; font-weight: 400; color: var(--text-light); }
+        .room-card .room-desc {
+            padding: 0 16px 16px;
+            font-size: 0.82em;
+            color: var(--text-light);
+        }
+
+        /* Checklist */
+        .checklist {
+            columns: 2;
+            column-gap: 20px;
+            list-style: none;
+        }
+        .checklist li {
+            break-inside: avoid;
+            padding: 8px 0 8px 28px;
+            position: relative;
+            font-size: 0.9em;
+            border-bottom: 1px dashed var(--border);
+        }
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            font-size: 1.1em;
+        }
+        .checklist-cat {
+            font-weight: 700;
+            color: var(--primary);
+            margin: 14px 0 6px;
+            font-size: 0.95em;
+            column-span: all;
+        }
+
+        /* Transport */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+        .transport-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 20px;
+        }
+        .transport-card h4 {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 1em; margin-bottom: 10px;
+        }
+        .transport-mode {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 700;
+            color: white;
+        }
+        .mode-drive { background: #0984e3; }
+        .mode-metro { background: #e84393; }
+        .mode-bus { background: #00b894; }
+        .transport-detail {
+            font-size: 0.88em;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        .transport-time {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 3px 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-top: 8px;
+        }
+
+        /* Insurance */
+        .insurance-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        .ins-card {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .ins-card .ins-amount {
+            font-size: 1.8em;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--success), #00cec9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .ins-card .ins-label { font-size: 0.82em; color: var(--text-light); margin-top: 4px; }
+
+        /* Review */
+        .review-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .review-col {
+            padding: 20px;
+            border-radius: 14px;
+        }
+        .review-good { background: #f0fff4; }
+        .review-bad { background: #fff5f5; }
+        .review-col h4 { font-size: 1em; margin-bottom: 10px; }
+        .review-col li {
+            font-size: 0.88em;
+            margin-left: 16px;
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+
+        /* Alert box */
+        .alert {
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 16px 0;
+            font-size: 0.9em;
+        }
+        .alert-pink { background: #fce4ec; color: #880e4f; border-left: 4px solid var(--primary); }
+        .alert-blue { background: #e3f2fd; color: #0d47a1; border-left: 4px solid #0984e3; }
+        .alert-green { background: #e8f5e9; color: #1b5e20; border-left: 4px solid var(--success); }
+        .alert-yellow { background: #fff8e1; color: #795548; border-left: 4px solid #ffa000; }
+
+        /* Final summary */
+        .final-box {
+            background: linear-gradient(135deg, #e84393, #6c5ce7);
+            border-radius: var(--radius);
+            padding: 30px;
+            color: white;
+            margin: 20px 0;
+        }
+        .final-box h3 { font-size: 1.3em; margin-bottom: 16px; }
+        .final-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 14px;
+        }
+        .final-item {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 18px;
+        }
+        .final-item h4 { margin-bottom: 4px; }
+        .final-item .final-sub { font-size: 0.8em; opacity: 0.8; margin-bottom: 8px; }
+        .final-item p { font-size: 0.9em; line-height: 1.6; opacity: 0.95; }
+
+        /* VIP detail */
+        .vip-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .vip-feature {
+            display: flex; align-items: center; gap: 8px;
+            padding: 10px 14px;
+            background: #fdf2f8;
+            border-radius: 10px;
+            font-size: 0.88em;
+        }
+        .vip-feature .vip-icon { font-size: 1.2em; }
+
+        .footer {
+            text-align: center; padding: 30px 20px; color: #aaa; font-size: 0.82em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.5em; }
+            .checklist { columns: 1; }
+            .review-columns { grid-template-columns: 1fr; }
+            .campus-grid { grid-template-columns: 1fr; }
+            .doctor-grid { grid-template-columns: 1fr; }
+            .transport-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+        .section[id] { scroll-margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+<div class="site-nav">
+    <a href="index.html">🏥 医院排名</a>
+    <a href="chengdu-women-children.html" class="current">🏩 妇儿中心攻略</a>
+    <a href="pregnancy-guide.html">🤰 孕期全指南</a>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+    <h1>成都市妇女儿童中心医院</h1>
+    <div class="sub">剖宫产深度攻略 · 玉林准妈妈专属指南</div>
+    <div class="hero-badges">
+        <span class="hero-badge">三级甲等</span>
+        <span class="hero-badge">全国绩效考核第8</span>
+        <span class="hero-badge">四川省第1</span>
+        <span class="hero-badge">年分娩量 1.7万+</span>
+        <span class="hero-badge">国家母婴安全优质服务单位</span>
+    </div>
+</div>
+
+<!-- Nav -->
+<div class="nav-tabs">
+    <div class="nav-tabs-inner">
+        <div class="nav-tab active" onclick="scrollToSection('overview')">医院概况</div>
+        <div class="nav-tab" onclick="scrollToSection('campus')">院区对比</div>
+        <div class="nav-tab" onclick="scrollToSection('doctors')">产科医生</div>
+        <div class="nav-tab" onclick="scrollToSection('nicu')">新生儿科</div>
+        <div class="nav-tab" onclick="scrollToSection('register')">建卡流程</div>
+        <div class="nav-tab" onclick="scrollToSection('prenatal')">产检时间表</div>
+        <div class="nav-tab" onclick="scrollToSection('fees')">费用明细</div>
+        <div class="nav-tab" onclick="scrollToSection('vip')">VIP服务</div>
+        <div class="nav-tab" onclick="scrollToSection('hospital-bag')">住院攻略</div>
+        <div class="nav-tab" onclick="scrollToSection('transport')">交通指南</div>
+        <div class="nav-tab" onclick="scrollToSection('reviews')">口碑评价</div>
+    </div>
+</div>
+
+<div class="container">
+
+<!-- 1. Overview -->
+<div class="section" id="overview">
+    <div class="section-header">
+        <div class="section-icon" style="background:var(--primary-light);">🏥</div>
+        <div>
+            <h2>医院概况</h2>
+            <p>西南地区规模最大的妇女儿童专科医院之一</p>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-value">三甲</div>
+            <div class="stat-label">医院等级</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">1,840</div>
+            <div class="stat-label">编制床位</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">3,068</div>
+            <div class="stat-label">在职员工</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">1.7万+</div>
+            <div class="stat-label">年分娩量</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">250万</div>
+            <div class="stat-label">年诊疗人次</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">4.1万</div>
+            <div class="stat-label">年住院手术台次</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>历史与背景</h3>
+        <p style="font-size:0.9em; color:var(--text-light); line-height:1.8;">
+            前身为 <strong>1944年</strong> 创建的"四川省立妇婴保健院"。<strong>2011年</strong>经成都市政府批准，由成都市第九人民医院、成都市妇产科医院、成都市妇幼保健院、成都市儿童医院和成都市计划生育指导所整合组建而成。现为电子科技大学医学院附属医院、重庆医科大学非直管附属医院。
+        </p>
+        <div style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
+            <span style="background:var(--accent-light); color:var(--accent); padding:4px 12px; border-radius:10px; font-size:0.82em; font-weight:600;">2022年全国妇幼绩效考核 A++ 等级</span>
+            <span style="background:#e8f5e9; color:#2e7d32; padding:4px 12px; border-radius:10px; font-size:0.82em; font-weight:600;">国家级母婴安全优质服务单位</span>
+            <span style="background:#fff3e0; color:#e65100; padding:4px 12px; border-radius:10px; font-size:0.82em; font-weight:600;">凶险型前置胎盘治疗 国内领先</span>
+        </div>
+    </div>
+</div>
+
+<!-- 2. Campus Compare -->
+<div class="section" id="campus">
+    <div class="section-header">
+        <div class="section-icon" style="background:#e3f2fd;">🏗️</div>
+        <div>
+            <h2>院区对比</h2>
+            <p>4个院区，2个有产科 — 剖宫产该去哪个？</p>
+        </div>
+    </div>
+
+    <div class="campus-grid">
+        <div class="campus-card">
+            <div class="campus-header recommended">
+                中心院区（日月大道）<span class="badge-rec" style="margin-left:8px;">剖宫产首选</span>
+                <small>青羊区日月大道一段1617号</small>
+            </div>
+            <div class="campus-body">
+                <div class="info-row"><span class="info-label">开放床位</span><span class="info-value">1,662张</span></div>
+                <div class="info-row"><span class="info-label">产科</span><span class="info-value" style="color:var(--success);">有（主力产科）</span></div>
+                <div class="info-row"><span class="info-label">NICU</span><span class="info-value" style="color:var(--success);">有（主力）</span></div>
+                <div class="info-row"><span class="info-label">VIP套间</span><span class="info-value">966-1,200元/天</span></div>
+                <div class="info-row"><span class="info-label">普通单间</span><span class="info-value">380元/天</span></div>
+                <div class="info-row"><span class="info-label">距玉林</span><span class="info-value">~10-15km / 25-40分钟</span></div>
+                <div class="info-row"><span class="info-label">电话</span><span class="info-value">028-63806390</span></div>
+            </div>
+        </div>
+
+        <div class="campus-card">
+            <div class="campus-header alternative">
+                实业街院区
+                <small>青羊区实业街32号</small>
+            </div>
+            <div class="campus-body">
+                <div class="info-row"><span class="info-label">开放床位</span><span class="info-value">200张</span></div>
+                <div class="info-row"><span class="info-label">产科</span><span class="info-value" style="color:var(--success);">有</span></div>
+                <div class="info-row"><span class="info-label">NICU</span><span class="info-value" style="color:var(--success);">有（分病区）</span></div>
+                <div class="info-row"><span class="info-label">VIP套间</span><span class="info-value">960-1,200元/天</span></div>
+                <div class="info-row"><span class="info-label">普通单间</span><span class="info-value">260-300元/天</span></div>
+                <div class="info-row"><span class="info-label">距玉林</span><span class="info-value">~5-7km / 15-25分钟</span></div>
+                <div class="info-row"><span class="info-label">电话</span><span class="info-value">028-86636871</span></div>
+            </div>
+        </div>
+
+        <div class="campus-card">
+            <div class="campus-header children">
+                太升南路院区（儿科专科）
+                <small>青羊区太升南路137号</small>
+            </div>
+            <div class="campus-body">
+                <div class="info-row"><span class="info-label">开放床位</span><span class="info-value">300张</span></div>
+                <div class="info-row"><span class="info-label">产科</span><span class="info-value" style="color:var(--danger);">无</span></div>
+                <div class="info-row"><span class="info-label">定位</span><span class="info-value">原成都市儿童医院</span></div>
+                <div class="info-row"><span class="info-label">电话</span><span class="info-value">028-86627601</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-pink" style="margin-top:16px;">
+        <strong>选择建议：</strong>剖宫产优先选 <strong>中心院区（日月大道）</strong>，设备最全、NICU最强。如产检图方便可在实业街院区进行，分娩时去中心院区。
+    </div>
+</div>
+
+<!-- 3. Doctors -->
+<div class="section" id="doctors">
+    <div class="section-header">
+        <div class="section-icon" style="background:#e8f5e9;">👩‍⚕️</div>
+        <div>
+            <h2>产科医生推荐</h2>
+            <p>46名产科医生，41名主任/副主任医师</p>
+        </div>
+    </div>
+
+    <div class="doctor-grid">
+        <div class="doctor-card">
+            <div class="doctor-avatar" style="background:linear-gradient(135deg,#e84393,#6c5ce7);">罗</div>
+            <div class="doctor-info">
+                <h4>罗丹</h4>
+                <div class="doctor-title">主任医师 · 产科主任</div>
+                <div class="doctor-spec">围产保健、高危妊娠监测、产前诊断、产科疑难重症处理</div>
+                <span class="doctor-tag">科室带头人</span>
+            </div>
+        </div>
+        <div class="doctor-card">
+            <div class="doctor-avatar" style="background:linear-gradient(135deg,#6c5ce7,#0984e3);">杨</div>
+            <div class="doctor-info">
+                <h4>杨霄</h4>
+                <div class="doctor-title">主任医师 · 副院长/产科副主任</div>
+                <div class="doctor-spec">孕期保健、高危妊娠及产科疑难危急重症，妇产科学博士</div>
+                <span class="doctor-tag">院级领导</span><span class="doctor-tag">学术型</span>
+            </div>
+        </div>
+        <div class="doctor-card">
+            <div class="doctor-avatar" style="background:linear-gradient(135deg,#e84393,#d63031);">刘</div>
+            <div class="doctor-info">
+                <h4>刘晓蓉</h4>
+                <div class="doctor-title">主任医师 · 教授</div>
+                <div class="doctor-spec">30余年经验，擅长剖宫产技术、高危妊娠、分娩方式选择、无痛分娩</div>
+                <span class="doctor-tag">剖宫产专家</span><span class="doctor-tag">科技进步奖</span>
+            </div>
+        </div>
+        <div class="doctor-card">
+            <div class="doctor-avatar" style="background:linear-gradient(135deg,#00b894,#00cec9);">廖</div>
+            <div class="doctor-info">
+                <h4>廖晓焰</h4>
+                <div class="doctor-title">主任医师</div>
+                <div class="doctor-spec">前置胎盘、妊娠期高血压、妊娠期糖尿病、产前诊断</div>
+                <span class="doctor-tag">口碑极佳</span><span class="doctor-tag">好大夫49评价</span>
+            </div>
+        </div>
+        <div class="doctor-card">
+            <div class="doctor-avatar" style="background:linear-gradient(135deg,#fdcb6e,#f39c12);">王</div>
+            <div class="doctor-info">
+                <h4>王涛</h4>
+                <div class="doctor-title">主任医师</div>
+                <div class="doctor-spec">围产保健、高危妊娠、剖宫产技术、异常产程处理</div>
+                <span class="doctor-tag">剖宫产技术熟练</span>
+            </div>
+        </div>
+        <div class="doctor-card">
+            <div class="doctor-avatar" style="background:linear-gradient(135deg,#0984e3,#74b9ff);">魏</div>
+            <div class="doctor-info">
+                <h4>魏素梅</h4>
+                <div class="doctor-title">主任医师 · 医学硕士</div>
+                <div class="doctor-spec">孕期保健、高危妊娠及产科疑难危急重症，16年经验</div>
+                <span class="doctor-tag">围产医学研究</span>
+            </div>
+        </div>
+        <div class="doctor-card">
+            <div class="doctor-avatar" style="background:linear-gradient(135deg,#a29bfe,#6c5ce7);">赖</div>
+            <div class="doctor-info">
+                <h4>赖繁</h4>
+                <div class="doctor-title">副主任医师</div>
+                <div class="doctor-spec">孕期保健、妊娠期合并症/并发症、各类难产手术</div>
+                <span class="doctor-tag">帝国理工进修</span><span class="doctor-tag">川大硕士</span>
+            </div>
+        </div>
+        <div class="doctor-card">
+            <div class="doctor-avatar" style="background:linear-gradient(135deg,#55efc4,#00b894);">潘</div>
+            <div class="doctor-info">
+                <h4>潘玥</h4>
+                <div class="doctor-title">副主任医师</div>
+                <div class="doctor-spec">围产期保健、高危妊娠、复杂性双胎及胎儿医学</div>
+                <span class="doctor-tag">华西毕业</span><span class="doctor-tag">胎儿医学</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+        <h3>挂号预约方式</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:10px; margin-top:10px;">
+            <div style="padding:12px; background:#fdf2f8; border-radius:10px; font-size:0.88em;">
+                <strong>官网预约</strong><br>www.wcch.cn
+            </div>
+            <div style="padding:12px; background:#f0f0ff; border-radius:10px; font-size:0.88em;">
+                <strong>电话预约</strong><br>028-61866186<br>028-87467888
+            </div>
+            <div style="padding:12px; background:#f0fff4; border-radius:10px; font-size:0.88em;">
+                <strong>第三方平台</strong><br>好大夫 / 微医 / 健康160
+            </div>
+            <div style="padding:12px; background:#fff8e1; border-radius:10px; font-size:0.88em;">
+                <strong>诊间/自助机</strong><br>就诊时可预约下次
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 4. NICU -->
+<div class="section" id="nicu">
+    <div class="section-header">
+        <div class="section-icon" style="background:#e3f2fd;">👶</div>
+        <div>
+            <h2>新生儿科 / NICU</h2>
+            <p>四川省医学甲级重点专科 · 国家级新生儿保健特色专科</p>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-value">310</div>
+            <div class="stat-label">总床位数</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">50</div>
+            <div class="stat-label">NICU重症床位</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">700km</div>
+            <div class="stat-label">转运网络覆盖</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>核心能力</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:10px; margin-top:12px;">
+            <div style="padding:14px; background:#e3f2fd; border-radius:10px;">
+                <div style="font-weight:700; font-size:0.9em; color:#1565c0;">四川省危重新生儿救治中心</div>
+                <div style="font-size:0.82em; color:var(--text-light); margin-top:4px;">省级及成都市双重认定</div>
+            </div>
+            <div style="padding:14px; background:#e8f5e9; border-radius:10px;">
+                <div style="font-weight:700; font-size:0.9em; color:#2e7d32;">国家级培训基地</div>
+                <div style="font-size:0.82em; color:var(--text-light); margin-top:4px;">新生儿神经重症医学专项技术教学培训基地</div>
+            </div>
+            <div style="padding:14px; background:#fce4ec; border-radius:10px;">
+                <div style="font-weight:700; font-size:0.9em; color:#c62828;">专用转运系统</div>
+                <div style="font-size:0.82em; color:var(--text-light); margin-top:4px;">配备新生儿专用救护转运系统，覆盖700+公里</div>
+            </div>
+            <div style="padding:14px; background:#fff3e0; border-radius:10px;">
+                <div style="font-weight:700; font-size:0.9em; color:#e65100;">多类型病房</div>
+                <div style="font-size:0.82em; color:var(--text-light); margin-top:4px;">NICU、普通、家庭化、早产儿专区</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-green">
+        <strong>对剖宫产的意义：</strong>新生儿科实力是选择剖宫产医院的关键因素。该院NICU全川前列，万一新生儿有任何异常可第一时间救治，无需转院，这是非常重要的安全保障。
+    </div>
+</div>
+
+<!-- 5. Register -->
+<div class="section" id="register">
+    <div class="section-header">
+        <div class="section-icon" style="background:#fff3e0;">📋</div>
+        <div>
+            <h2>建卡流程</h2>
+            <p>建议孕8-10周尽早建卡，当天可完成</p>
+        </div>
+    </div>
+
+    <div class="alert alert-pink">
+        <strong>重要提醒：</strong>NT检查需提前2周预约，窗口期仅孕12-13+6周，错过无法补做。所以必须孕10周前完成建卡！
+    </div>
+
+    <div class="card">
+        <h3>所需证件</h3>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;">
+            <span style="background:var(--primary-light); padding:6px 14px; border-radius:10px; font-size:0.88em;">身份证原件</span>
+            <span style="background:var(--accent-light); padding:6px 14px; border-radius:10px; font-size:0.88em;">社保卡/医保卡</span>
+            <span style="background:#e8f5e9; padding:6px 14px; border-radius:10px; font-size:0.88em;">早孕B超报告（如有）</span>
+            <span style="background:#fff3e0; padding:6px 14px; border-radius:10px; font-size:0.88em;">外地户籍需居住证明</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>建卡当天流程（建议一早空腹前往）</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:10px; margin-top:12px;">
+            <div style="display:flex; gap:10px; align-items:flex-start; padding:12px; background:#fdf2f8; border-radius:10px;">
+                <span style="background:var(--primary); color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.85em; font-weight:700; flex-shrink:0;">1</span>
+                <div><strong style="font-size:0.9em;">挂号</strong><br><span style="font-size:0.82em; color:var(--text-light);">挂"产科建卡门诊"号，务必挂上午号（需空腹抽血）</span></div>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start; padding:12px; background:#f0f0ff; border-radius:10px;">
+                <span style="background:var(--accent); color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.85em; font-weight:700; flex-shrink:0;">2</span>
+                <div><strong style="font-size:0.9em;">医生问诊开单</strong><br><span style="font-size:0.82em; color:var(--text-light);">医生了解病史，开检查单</span></div>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start; padding:12px; background:#e8f5e9; border-radius:10px;">
+                <span style="background:var(--success); color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.85em; font-weight:700; flex-shrink:0;">3</span>
+                <div><strong style="font-size:0.9em;">缴费 + 建卡登记</strong><br><span style="font-size:0.82em; color:var(--text-light);">缴费后到建卡处录入个人信息</span></div>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start; padding:12px; background:#fff3e0; border-radius:10px;">
+                <span style="background:#f39c12; color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.85em; font-weight:700; flex-shrink:0;">4</span>
+                <div><strong style="font-size:0.9em;">空腹抽血 + 其他检查</strong><br><span style="font-size:0.82em; color:var(--text-light);">血常规、尿常规、心电图等</span></div>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start; padding:12px; background:#fce4ec; border-radius:10px;">
+                <span style="background:var(--danger); color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.85em; font-weight:700; flex-shrink:0;">5</span>
+                <div><strong style="font-size:0.9em;">预约NT检查</strong><br><span style="font-size:0.82em; color:var(--text-light);">预约2周后的NT检查（孕12-13+6周）</span></div>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start; padding:12px; background:#e3f2fd; border-radius:10px;">
+                <span style="background:#0984e3; color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.85em; font-weight:700; flex-shrink:0;">6</span>
+                <div><strong style="font-size:0.9em;">完成建卡</strong><br><span style="font-size:0.82em; color:var(--text-light);">当天费用约 1,000-3,100元，可使用医保</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 6. Prenatal -->
+<div class="section" id="prenatal">
+    <div class="section-header">
+        <div class="section-icon" style="background:var(--accent-light);">📅</div>
+        <div>
+            <h2>产检时间表</h2>
+            <p>从建卡到分娩的完整产检路线图</p>
+        </div>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-week">孕 6-8 周</div>
+            <div class="timeline-title">早孕确认</div>
+            <div class="timeline-desc">B超确认宫内妊娠、胎心搏动。可在就近医院完成，建卡前自行准备。</div>
+        </div>
+        <div class="timeline-item highlight">
+            <div class="timeline-week">孕 8-10 周</div>
+            <div class="timeline-title">建卡 + 首次全面检查</div>
+            <div class="timeline-desc">血常规、尿常规、血型、肝肾功能、传染病筛查、心电图。需空腹。费用约1,000-3,100元。</div>
+        </div>
+        <div class="timeline-item highlight">
+            <div class="timeline-week">孕 11-13+6 周</div>
+            <div class="timeline-title">NT检查（颈项透明层）</div>
+            <div class="timeline-desc">评估染色体异常风险的重要筛查。需提前2周预约，窗口期极短，错过无法补做！</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-week">孕 15-20 周</div>
+            <div class="timeline-title">中期唐氏筛查</div>
+            <div class="timeline-desc">血清学筛查或无创DNA。早唐可在11-13+6周结合NT同步进行。</div>
+        </div>
+        <div class="timeline-item highlight">
+            <div class="timeline-week">孕 18-24 周</div>
+            <div class="timeline-title">四维彩超 / 大排畸</div>
+            <div class="timeline-desc">系统B超排查胎儿结构畸形，非常重要。需提前预约。</div>
+        </div>
+        <div class="timeline-item highlight">
+            <div class="timeline-week">孕 24-28 周</div>
+            <div class="timeline-title">OGTT 糖耐量试验</div>
+            <div class="timeline-desc">妊娠期糖尿病筛查，需空腹。喝75g葡萄糖水后分别查1h、2h血糖。</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-week">孕 28-36 周</div>
+            <div class="timeline-title">每2周产检</div>
+            <div class="timeline-desc">宫高、腹围、胎心、血压、体重、尿常规。30-32周做小排畸B超。</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-week">孕 34-36 周</div>
+            <div class="timeline-title">胎心监护 + GBS筛查</div>
+            <div class="timeline-desc">开始定期胎心监护，GBS筛查、肝功能复查。</div>
+        </div>
+        <div class="timeline-item highlight">
+            <div class="timeline-week">孕 36-40 周</div>
+            <div class="timeline-title">每周产检 · 确定分娩方式</div>
+            <div class="timeline-desc">胎心监护、胎位确认、评估分娩方式。<strong>剖宫产一般安排在孕38-39周。</strong>此时预约VIP房间。</div>
+        </div>
+    </div>
+
+    <div class="alert alert-blue">
+        <strong>产前诊断科门诊：</strong>每周一、二、三、五上午 &nbsp;|&nbsp; <strong>羊水穿刺：</strong>每周二、四下午（如需要）
+    </div>
+</div>
+
+<!-- 7. Fees -->
+<div class="section" id="fees">
+    <div class="section-header">
+        <div class="section-icon" style="background:#e8f5e9;">💰</div>
+        <div>
+            <h2>剖宫产费用明细</h2>
+            <p>普通病房 vs VIP · 医保报销 · 实际自费估算</p>
+        </div>
+    </div>
+
+    <div class="card" style="overflow-x:auto;">
+        <h3>基础费用（普通病房剖宫产）</h3>
+        <table class="fee-table" style="margin-top:12px;">
+            <thead>
+                <tr>
+                    <th>费用项目</th>
+                    <th>预估金额</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>手术费 + 麻醉费</td>
+                    <td>含在总费用中</td>
+                    <td>椎管内麻醉（腰麻/硬膜外）</td>
+                </tr>
+                <tr>
+                    <td>药品费</td>
+                    <td>含在总费用中</td>
+                    <td>术中/术后用药</td>
+                </tr>
+                <tr>
+                    <td>检查检验费</td>
+                    <td>含在总费用中</td>
+                    <td>术前检查、新生儿筛查等</td>
+                </tr>
+                <tr>
+                    <td>普通床位费</td>
+                    <td>40-80元/天 × 4-5天</td>
+                    <td>多人间</td>
+                </tr>
+                <tr>
+                    <td>预交金</td>
+                    <td>8,000元</td>
+                    <td>入院时预交</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>总费用（普通病房）</strong></td>
+                    <td><strong>8,500 - 12,000元</strong></td>
+                    <td>因个人情况浮动</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Room types -->
+    <h3 style="margin:20px 0 12px; font-size:1.1em;">病房类型与价格</h3>
+    <div class="room-grid">
+        <div class="room-card">
+            <div class="room-header" style="background:linear-gradient(135deg,#636e72,#2d3436);">普通多人间</div>
+            <div class="room-price">40-80<span class="room-unit">元/天</span></div>
+            <div class="room-desc">4-6人间，基础配置<br>医保全额覆盖</div>
+        </div>
+        <div class="room-card">
+            <div class="room-header" style="background:linear-gradient(135deg,#0984e3,#74b9ff);">普通单间</div>
+            <div class="room-price">260-380<span class="room-unit">元/天</span></div>
+            <div class="room-desc">中心院区380元 / 实业街260-300元<br>独立空间，基础设施</div>
+        </div>
+        <div class="room-card">
+            <div class="room-header" style="background:linear-gradient(135deg,#e84393,#6c5ce7);">VIP小套间</div>
+            <div class="room-price">960-966<span class="room-unit">元/天</span></div>
+            <div class="room-desc">一房一厅，独立卫生间<br>含部分服务</div>
+        </div>
+        <div class="room-card">
+            <div class="room-header" style="background:linear-gradient(135deg,#fdcb6e,#e17055);">VIP大套间</div>
+            <div class="room-price">1,200<span class="room-unit">元/天</span></div>
+            <div class="room-desc">35㎡一房一厅，全套设施<br>月嫂 + 营养餐 + 陪护</div>
+        </div>
+    </div>
+
+    <!-- VIP Package -->
+    <div class="card" style="margin-top:16px; border:2px solid var(--primary);">
+        <h3 style="color:var(--primary);">VIP特需套餐（一价全包）</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:14px; margin-top:14px;">
+            <div style="padding:18px; background:linear-gradient(135deg,#fdf2f8,#f0f0ff); border-radius:12px;">
+                <div style="font-size:1.6em; font-weight:800; color:var(--primary);">42,980元</div>
+                <div style="font-size:0.85em; color:var(--text-light);">VIP特需单间 · 剖宫产套餐 · 4晚</div>
+                <div style="font-size:0.82em; margin-top:8px; line-height:1.7;">含手术、住院、24h月嫂、产妇5餐/天、家属3餐/天、独立卫生间</div>
+                <div style="font-size:0.8em; color:var(--danger); margin-top:6px;">加住：8,596元/晚</div>
+            </div>
+            <div style="padding:18px; background:linear-gradient(135deg,#e8f5e9,#e3f2fd); border-radius:12px;">
+                <div style="font-size:1.6em; font-weight:800; color:var(--accent);">~35,000元</div>
+                <div style="font-size:0.85em; color:var(--text-light);">家庭化产房 · 剖宫产套餐 · 5天4晚</div>
+                <div style="font-size:0.82em; margin-top:8px; line-height:1.7;">含多学科团队、月嫂服务、营养月子餐</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Insurance -->
+    <h3 style="margin:20px 0 12px; font-size:1.1em;">医保报销与实际自费</h3>
+    <div class="insurance-cards">
+        <div class="ins-card">
+            <div class="ins-amount">~70%</div>
+            <div class="ins-label">职工医保报销比例</div>
+        </div>
+        <div class="ins-card">
+            <div class="ins-amount">6,000元</div>
+            <div class="ins-label">生育险剖宫产限额</div>
+        </div>
+        <div class="ins-card">
+            <div class="ins-amount">1,000元</div>
+            <div class="ins-label">产检定额补助</div>
+        </div>
+        <div class="ins-card">
+            <div class="ins-amount">3,000元</div>
+            <div class="ins-label">妊娠≥7月定额补贴</div>
+        </div>
+    </div>
+
+    <div class="alert alert-green" style="margin-top:14px;">
+        <strong>实际自费估算：</strong><br>
+        普通病房剖宫产（总费用8,500-12,000元）→ 医保报销后自费约 <strong>3,000-5,000元</strong><br>
+        VIP套餐（35,000-43,000元）→ 基础医疗部分可报销，VIP加价部分自费 → 自费约 <strong>30,000-38,000元</strong>
+    </div>
+</div>
+
+<!-- 8. VIP -->
+<div class="section" id="vip">
+    <div class="section-header">
+        <div class="section-icon" style="background:#fff3e0;">👑</div>
+        <div>
+            <h2>VIP / 特需服务</h2>
+            <p>中心院区VIP套间 · 35㎡一房一厅 · 全方位服务</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>VIP大套间配置（中心院区）</h3>
+        <p style="font-size:0.88em; color:var(--text-light); margin-bottom:12px;">面积约35㎡，一房一厅格局</p>
+        <div class="vip-features">
+            <div class="vip-feature"><span class="vip-icon">🛏️</span>产妇病床1张</div>
+            <div class="vip-feature"><span class="vip-icon">👶</span>宝宝床2张</div>
+            <div class="vip-feature"><span class="vip-icon">🛋️</span>陪护床1张 + 沙发</div>
+            <div class="vip-feature"><span class="vip-icon">📺</span>电视机</div>
+            <div class="vip-feature"><span class="vip-icon">🧊</span>冰箱</div>
+            <div class="vip-feature"><span class="vip-icon">💧</span>饮水机</div>
+            <div class="vip-feature"><span class="vip-icon">🚿</span>独立卫生间</div>
+            <div class="vip-feature"><span class="vip-icon">👩‍⚕️</span>24h一对一月嫂</div>
+            <div class="vip-feature"><span class="vip-icon">🍱</span>产妇每日5餐营养月子餐</div>
+            <div class="vip-feature"><span class="vip-icon">🍽️</span>家属每日3餐</div>
+            <div class="vip-feature"><span class="vip-icon">👨‍⚕️</span>多学科团队服务</div>
+            <div class="vip-feature"><span class="vip-icon">🏠</span>客厅约20㎡</div>
+        </div>
+    </div>
+
+    <div class="alert alert-yellow">
+        <strong>预约提醒：</strong>VIP房间紧张！剖宫产妈妈请在 <strong>孕36-38周</strong> 到产科护士台排队预约。顺产妈妈只能入院时碰运气。建议越早预约越好。
+    </div>
+</div>
+
+<!-- 9. Hospital Bag -->
+<div class="section" id="hospital-bag">
+    <div class="section-header">
+        <div class="section-icon" style="background:var(--primary-light);">🧳</div>
+        <div>
+            <h2>住院攻略</h2>
+            <p>入院流程 · 待产包清单 · 住院天数</p>
+        </div>
+    </div>
+
+    <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px,1fr));">
+        <div class="stat-card">
+            <div class="stat-value">4-5天</div>
+            <div class="stat-label">剖宫产住院天数</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">8,000元</div>
+            <div class="stat-label">入院预交金</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">24小时</div>
+            <div class="stat-label">急诊/产科值班</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>待产包清单</h3>
+        <div class="checklist-cat">📄 证件类</div>
+        <ul class="checklist">
+            <li>身份证（原件 + 复印件）</li>
+            <li>社保卡 / 医保卡</li>
+            <li>就诊卡 / 母子健康手册</li>
+            <li>准生证（生育服务证）</li>
+            <li>户口本原件及复印件（耳聋基因免费筛查用）</li>
+        </ul>
+        <div class="checklist-cat">👩 产妇用品</div>
+        <ul class="checklist">
+            <li>上下分体开衫（方便哺乳）× 2-3套</li>
+            <li>收腹带 × 2条</li>
+            <li>哺乳胸罩 × 2-3件</li>
+            <li>产后内裤（一次性/棉质）</li>
+            <li>产妇卫生巾（加长加大型）</li>
+            <li>成人护理垫</li>
+            <li>吸管杯（术后躺着喝水必备）</li>
+            <li>防滑拖鞋</li>
+            <li>洗漱用品（牙膏牙刷面盆毛巾）</li>
+            <li>餐具（碗筷杯子）</li>
+        </ul>
+        <div class="checklist-cat">👶 新生儿用品</div>
+        <ul class="checklist">
+            <li>新生儿衣服 × 2-3套</li>
+            <li>包被 × 1-2条</li>
+            <li>纸尿裤 NB号</li>
+            <li>湿纸巾</li>
+            <li>小毛巾 × 2-3条</li>
+        </ul>
+    </div>
+
+    <div class="alert alert-blue">
+        <strong>VIP套餐已包含：</strong>如选择VIP套餐，部分用品和全部餐食已包含在内，入院前可致电确认具体清单，减少携带。
+    </div>
+</div>
+
+<!-- 10. Transport -->
+<div class="section" id="transport">
+    <div class="section-header">
+        <div class="section-icon" style="background:#e3f2fd;">🚗</div>
+        <div>
+            <h2>交通指南（从玉林出发）</h2>
+            <p>自驾 · 地铁 · 公交，到两个产科院区的路线</p>
+        </div>
+    </div>
+
+    <h3 style="margin-bottom:12px; font-size:1.05em;">到中心院区（日月大道1617号）<span class="badge-rec" style="margin-left:8px;">剖宫产推荐</span></h3>
+    <div class="transport-grid">
+        <div class="transport-card">
+            <h4><span class="transport-mode mode-drive">自驾</span> 开车</h4>
+            <div class="transport-detail">
+                玉林 → 二环路/三环路向西 → 日月大道（成温路）→ 到达<br>
+                距离约10-15公里<br>
+                医院有停车场（高峰期紧张）
+            </div>
+            <span class="transport-time">约25-40分钟</span>
+        </div>
+        <div class="transport-card">
+            <h4><span class="transport-mode mode-metro">地铁</span> 轨道交通</h4>
+            <div class="transport-detail">
+                地铁3号线（衣冠庙站/高升桥站上车）→ 换乘4号线 → <strong>中坝站（B口）</strong>下车 → 沿日月大道向西步行约600米到达
+            </div>
+            <span class="transport-time">约40-50分钟</span>
+        </div>
+        <div class="transport-card">
+            <h4><span class="transport-mode mode-bus">公交</span> 公交线路</h4>
+            <div class="transport-detail">
+                可乘坐 78路、32路、1056路、232路、228路 等线路到达
+            </div>
+            <span class="transport-time">约40-60分钟</span>
+        </div>
+    </div>
+
+    <h3 style="margin:20px 0 12px; font-size:1.05em;">到实业街院区（实业街32号）<span style="background:#e8f5e9; color:#2e7d32; padding:2px 10px; border-radius:10px; font-size:0.72em; font-weight:600; margin-left:8px;">产检推荐</span></h3>
+    <div class="transport-grid">
+        <div class="transport-card">
+            <h4><span class="transport-mode mode-drive">自驾</span> 开车</h4>
+            <div class="transport-detail">
+                玉林 → 向北经人民南路/红照壁 → 实业街 → 到达<br>
+                距离约5-7公里
+            </div>
+            <span class="transport-time">约15-25分钟</span>
+        </div>
+        <div class="transport-card">
+            <h4><span class="transport-mode mode-metro">地铁</span> 轨道交通</h4>
+            <div class="transport-detail">
+                方案一：3号线 → 省体育馆换乘1号线 → <strong>天府广场站</strong> → 步行约800米<br>
+                方案二：3号线 → 春熙路换乘2号线 → <strong>人民公园站</strong> → 步行约600米
+            </div>
+            <span class="transport-time">约30-40分钟</span>
+        </div>
+    </div>
+
+    <div class="alert alert-blue" style="margin-top:16px;">
+        <strong>建议策略：</strong>日常产检选择更近的 <strong>实业街院区</strong>（15-25分钟），分娩时前往设备更全的 <strong>中心院区</strong>（25-40分钟）。剖宫产为计划手术，可提前一天住院，不用担心路程时间。
+    </div>
+</div>
+
+<!-- 11. Reviews -->
+<div class="section" id="reviews">
+    <div class="section-header">
+        <div class="section-icon" style="background:#fff3e0;">💬</div>
+        <div>
+            <h2>口碑评价</h2>
+            <p>综合好大夫、知乎、本地宝等平台的真实反馈</p>
+        </div>
+    </div>
+
+    <div class="review-columns">
+        <div class="review-col review-good">
+            <h4 style="color:#2e7d32;">好评集中在...</h4>
+            <ul>
+                <li><strong>产科经验丰富</strong> — 年分娩近1.8万例，手术量大，医生技术成熟</li>
+                <li><strong>新生儿科实力强</strong> — NICU全川前列，新生儿有任何问题无需转院</li>
+                <li><strong>VIP服务到位</strong> — 月嫂、营养餐、一房一厅，产后体验好</li>
+                <li><strong>妇儿专科氛围</strong> — 整个医院围绕妇儿服务，流程针对性强</li>
+                <li><strong>廖晓焰等医生口碑好</strong> — 患者评价多，态度和技术获认可</li>
+                <li><strong>凶险型前置胎盘治疗国内领先</strong> — 高危产妇的有力保障</li>
+            </ul>
+        </div>
+        <div class="review-col review-bad">
+            <h4 style="color:#c62828;">吐槽集中在...</h4>
+            <ul>
+                <li><strong>人太多</strong> — 产检排队等候时间长，热门医生一号难求</li>
+                <li><strong>费用偏高</strong> — 在成都公立医院中收费偏贵</li>
+                <li><strong>普通病房条件一般</strong> — 多人间隐私性差、嘈杂</li>
+                <li><strong>中心院区位置偏</strong> — 在三环外日月大道，距市中心远</li>
+                <li><strong>停车位紧张</strong> — 高峰期停车困难</li>
+                <li><strong>个别医生态度一般</strong> — 可能因患者量太大</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+        <h3>与华西附二院对比</h3>
+        <div style="font-size:0.9em; color:var(--text-light); line-height:1.8; margin-top:8px;">
+            在成都产科领域，本院与华西二院、四川省妇幼保健院并列最受欢迎的三大妇产机构。<br>
+            <strong>相比华西二院：</strong>挂号/建卡更容易、VIP服务更成熟、病房选择更多；但学术地位和极端危重症处理略逊。<br>
+            <strong>总体评价：</strong>对于正常及中度风险的剖宫产产妇来说，本院是非常优秀的选择，综合体验甚至优于华西。
+        </div>
+    </div>
+</div>
+
+<!-- Final Summary -->
+<div class="final-box">
+    <h3>针对玉林准妈妈的行动清单</h3>
+    <div class="final-grid">
+        <div class="final-item">
+            <h4>第一步：尽早建卡</h4>
+            <div class="final-sub">孕8-10周</div>
+            <p>空腹挂"产科建卡门诊"号，当天完成建卡+首检。费用约1,000-3,100元。别忘了预约2周后的NT！</p>
+        </div>
+        <div class="final-item">
+            <h4>第二步：选好医生</h4>
+            <div class="final-sub">建卡时确定</div>
+            <p>推荐关注：刘晓蓉（剖宫产专家）、廖晓焰（口碑好）、王涛（剖宫产技术熟练）。通过官网或好大夫提前预约。</p>
+        </div>
+        <div class="final-item">
+            <h4>第三步：产检策略</h4>
+            <div class="final-sub">整个孕期</div>
+            <p>日常产检可在实业街院区（距玉林15-25分钟），大型检查（大排畸等）和分娩去中心院区。</p>
+        </div>
+        <div class="final-item">
+            <h4>第四步：预约VIP</h4>
+            <div class="final-sub">孕36-38周</div>
+            <p>到中心院区产科护士台预约VIP房间。越早越好，房源紧张！</p>
+        </div>
+        <div class="final-item">
+            <h4>第五步：准备入院</h4>
+            <div class="final-sub">孕38-39周</div>
+            <p>按待产包清单准备物品。剖宫产为计划手术，一般提前1天住院。住院4-5天。</p>
+        </div>
+        <div class="final-item">
+            <h4>费用预算</h4>
+            <div class="final-sub">做好心理准备</div>
+            <p>普通病房：自费约3,000-5,000元<br>VIP套餐：自费约30,000-38,000元<br>产检总费用：约5,000-8,000元（医保可报部分）</p>
+        </div>
+    </div>
+</div>
+
+<div class="alert alert-yellow">
+    <strong>免责声明：</strong>本页面数据综合自医院官网、好大夫在线、成都本地宝等公开信息，仅供参考。实际费用、医生排班、VIP房源等信息可能随时变化，请以医院官方发布为准。就医选择请结合自身身体状况，咨询专业医生意见。
+</div>
+
+<div class="footer">
+    成都市妇女儿童中心医院 · 剖宫产深度攻略 · 玉林准妈妈专属指南<br>
+    数据来源：医院官网 www.wcch.cn · 好大夫在线 · 成都本地宝 · 知乎<br>
+    信息整理时间：2025年
+</div>
+
+</div>
+
+<script>
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    // Update active tab
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+}
+
+// Highlight nav on scroll
+const sections = document.querySelectorAll('.section[id]');
+const navTabs = document.querySelectorAll('.nav-tab');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const top = section.offsetTop - 80;
+        if (window.scrollY >= top) {
+            current = section.getAttribute('id');
+        }
+    });
+    navTabs.forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.getAttribute('onclick')?.includes(current)) {
+            tab.classList.add('active');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
