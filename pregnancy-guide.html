@@ -40,6 +40,8 @@
             gap: 0;
             position: relative;
             z-index: 200;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
         .site-nav a {
             color: rgba(255,255,255,0.7);
@@ -132,7 +134,7 @@
 
         /* Section */
         .sec { padding: 32px 0; }
-        .sec[id] { scroll-margin-top: 56px; }
+        .sec[id] { scroll-margin-top: 60px; }
         .sec-head {
             display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
         }
@@ -306,9 +308,68 @@
         .footer { text-align: center; padding: 30px; color: #aaa; font-size: 0.8em; }
 
         @media(max-width:768px) {
-            .hero h1 { font-size: 1.6em; }
+            .hero { padding: 35px 16px 50px; }
+            .hero h1 { font-size: 1.5em; }
+            .hero .sub { font-size: 0.88em; }
+            .hero-emoji { font-size: 2.4em; }
+            .hero-tags { gap: 6px; }
+            .hero-tag { font-size: 0.78em; padding: 4px 10px; }
+            .container { padding: 0 12px; }
+            .sec { padding: 24px 0; }
+            .sec-head { gap: 10px; margin-bottom: 14px; }
+            .sec-icon { width: 40px; height: 40px; font-size: 1.2em; border-radius: 10px; }
+            .sec-head h2 { font-size: 1.15em; }
             .g2,.g3 { grid-template-columns: 1fr; }
-            .nav a { padding: 12px 10px; font-size: 0.78em; }
+            .g4 { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            .stat { padding: 14px 8px; }
+            .stat .sv { font-size: 1.3em; }
+            .stat .sl { font-size: 0.72em; }
+            .card { padding: 16px; }
+            .card h3 { font-size: 0.98em; }
+            .nav a { padding: 11px 10px; font-size: 0.76em; }
+            .tl { padding-left: 26px; }
+            .tl-item { padding: 14px 16px; }
+            .tl-item::before { left: -22px; width: 11px; height: 11px; }
+            .tl-title { font-size: 0.9em; }
+            .tl-desc { font-size: 0.8em; }
+            .tl-week { font-size: 0.74em; }
+            .tb th, .tb td { padding: 8px 10px; font-size: 0.8em; }
+            .step { padding: 12px 14px; }
+            .step-n { width: 26px; height: 26px; font-size: 0.78em; }
+            .step-body strong { font-size: 0.88em; }
+            .step-body span { font-size: 0.78em; }
+            .acc-head { padding: 14px 16px; font-size: 0.88em; }
+            .danger-grid { grid-template-columns: 1fr; }
+            .danger-item { padding: 12px; }
+            .benefit-total { padding: 20px; }
+            .benefit-total .bt-amount { font-size: 2em; }
+            .benefit-total .bt-label { font-size: 0.78em; }
+            .al { padding: 12px 14px; font-size: 0.84em; }
+            .eb-icon { font-size: 1.1em; }
+            .eb-text { font-size: 0.84em; }
+            .final { padding: 20px; margin: 20px 0; }
+            .final h3 { font-size: 1.1em; }
+            .action-grid { grid-template-columns: 1fr; gap: 10px; }
+            .action-card { padding: 14px; }
+            .action-card h4 { font-size: 0.9em; }
+            .action-card p { font-size: 0.82em; }
+            .ins-card { padding: 14px; }
+            .ins-card .ins-amount { font-size: 1.4em; }
+            .week5-box { padding: 18px; }
+            .week5-box h3 { font-size: 1em; }
+            .progress-bar { height: 10px; }
+        }
+
+        @media(max-width:420px) {
+            .hero h1 { font-size: 1.25em; }
+            .hero-tag { font-size: 0.72em; padding: 3px 8px; }
+            .g4 { grid-template-columns: repeat(2, 1fr); }
+            .stat .sv { font-size: 1.15em; }
+            .nav a { padding: 10px 7px; font-size: 0.7em; }
+            .tl-item { padding: 12px 12px; margin-bottom: 14px; }
+            .tb th, .tb td { padding: 6px 8px; font-size: 0.75em; }
+            .benefit-total .bt-amount { font-size: 1.7em; }
+            .site-nav a { padding: 9px 10px; font-size: 0.75em; }
         }
         html { scroll-behavior: smooth; }
 

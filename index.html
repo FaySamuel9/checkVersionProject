@@ -27,6 +27,8 @@
             gap: 0;
             position: relative;
             z-index: 200;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
         .site-nav a {
             color: rgba(255,255,255,0.7);
@@ -505,7 +507,7 @@
             width: 100%;
             border-collapse: collapse;
             background: white;
-            min-width: 700px;
+            min-width: 600px;
         }
 
         .compare-table th {
@@ -612,12 +614,55 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.5em; }
+            .hero { padding: 30px 16px; }
+            .hero h1 { font-size: 1.4em; }
+            .hero .subtitle { font-size: 0.88em; }
+            .hero .location-tag { font-size: 0.82em; padding: 5px 12px; }
+            .container { padding: 0 12px; }
+            .summary-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .summary-card { padding: 14px 10px; }
+            .summary-card .icon { font-size: 1.5em; }
+            .summary-card .value { font-size: 1.1em; }
+            .section-title { font-size: 1.15em; }
             .score-bars { grid-template-columns: 1fr; }
             .detail-grid { grid-template-columns: 1fr; }
             .pros-cons { grid-template-columns: 1fr; }
-            .card-header { padding: 16px; }
-            .card-score .score { font-size: 1.4em; }
+            .card-header { padding: 14px; gap: 10px; flex-wrap: wrap; }
+            .rank-badge { width: 40px; height: 40px; font-size: 1.1em; }
+            .card-info h3 { font-size: 1em; }
+            .card-score .score { font-size: 1.3em; }
+            .card-score { min-width: auto; }
+            .toggle-arrow { right: 14px; }
+            .card-details { padding: 0 14px 18px; }
+            .tag { font-size: 0.7em; padding: 2px 7px; }
+            .compare-table th, .compare-table td { padding: 8px 10px; font-size: 0.78em; }
+            .weight-section { padding: 18px; }
+            .weight-label { width: 70px; font-size: 0.82em; }
+            .weight-fill { font-size: 0.72em; }
+            .filter-bar { gap: 6px; }
+            .filter-btn { padding: 6px 12px; font-size: 0.8em; }
+            .insurance-section { padding: 18px; }
+            .insurance-grid { grid-template-columns: repeat(2, 1fr); }
+            .insurance-item .amount { font-size: 1.2em; }
+            .recommendation { padding: 20px; }
+            .recommendation h3 { font-size: 1.1em; }
+            .rec-cards { grid-template-columns: 1fr; }
+            .rec-card { padding: 16px; }
+            .tier-label { font-size: 0.8em; }
+            .disclaimer { padding: 12px 14px; font-size: 0.8em; }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 { font-size: 1.2em; }
+            .summary-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .summary-card .value { font-size: 1em; }
+            .card-header { padding: 12px; }
+            .rank-badge { width: 34px; height: 34px; font-size: 0.95em; }
+            .card-info h3 { font-size: 0.92em; }
+            .hospital-tags { gap: 4px; }
+            .tag { font-size: 0.65em; }
+            .card-score .score { font-size: 1.1em; }
+            .site-nav a { padding: 9px 10px; font-size: 0.75em; }
         }
 
         /* Animated entrance */

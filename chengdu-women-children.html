@@ -42,6 +42,8 @@
             gap: 0;
             position: relative;
             z-index: 200;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
         .site-nav a {
             color: rgba(255,255,255,0.7);
@@ -532,17 +534,64 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.5em; }
+            .hero { padding: 35px 16px 30px; }
+            .hero h1 { font-size: 1.4em; }
+            .hero .sub { font-size: 0.88em; }
+            .hero-badges { gap: 6px; }
+            .hero-badge { font-size: 0.75em; padding: 3px 10px; }
+            .container { padding: 0 12px; }
+            .section { padding: 24px 0; }
+            .section-header { gap: 10px; margin-bottom: 14px; }
+            .section-icon { width: 40px; height: 40px; font-size: 1.2em; }
+            .section-header h2 { font-size: 1.15em; }
             .checklist { columns: 1; }
             .review-columns { grid-template-columns: 1fr; }
             .campus-grid { grid-template-columns: 1fr; }
             .doctor-grid { grid-template-columns: 1fr; }
             .transport-grid { grid-template-columns: 1fr; }
+            .card { padding: 16px; }
+            .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            .stat-card { padding: 14px 8px; }
+            .stat-card .stat-value { font-size: 1.2em; }
+            .stat-card .stat-label { font-size: 0.72em; }
+            .doctor-card { padding: 14px; gap: 10px; }
+            .doctor-avatar { width: 42px; height: 42px; font-size: 1.2em; }
+            .doctor-info h4 { font-size: 0.92em; }
+            .doctor-info .doctor-spec { font-size: 0.78em; }
+            .campus-header { padding: 14px 16px; font-size: 0.95em; }
+            .campus-body .info-row { font-size: 0.84em; padding: 6px 0; }
+            .fee-table th, .fee-table td { padding: 9px 10px; font-size: 0.8em; }
+            .room-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .room-card .room-price { font-size: 1.3em; padding: 10px; }
+            .room-card .room-header { padding: 12px; font-size: 0.9em; }
+            .transport-card { padding: 16px; }
+            .transport-detail { font-size: 0.82em; }
+            .vip-features { grid-template-columns: 1fr; }
+            .vip-feature { padding: 8px 12px; font-size: 0.82em; }
+            .final-box { padding: 20px; }
+            .final-box h3 { font-size: 1.1em; }
+            .final-grid { grid-template-columns: 1fr; }
+            .final-item { padding: 14px; }
+            .checklist li { padding: 6px 0 6px 26px; font-size: 0.84em; }
+            .checklist-cat { font-size: 0.88em; }
+            .nav-tabs { padding: 0 8px; }
+            .nav-tab { padding: 11px 10px; font-size: 0.78em; }
+            .al { padding: 12px 14px; font-size: 0.84em; }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 { font-size: 1.2em; }
+            .hero-badge { font-size: 0.7em; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .room-grid { grid-template-columns: 1fr; }
+            .doctor-card { flex-direction: column; align-items: center; text-align: center; }
+            .nav-tab { padding: 10px 8px; font-size: 0.72em; }
+            .site-nav a { padding: 9px 10px; font-size: 0.75em; }
         }
 
         /* Smooth scroll */
         html { scroll-behavior: smooth; }
-        .section[id] { scroll-margin-top: 60px; }
+        .section[id] { scroll-margin-top: 105px; }
     </style>
 </head>
 <body>
